@@ -552,16 +552,55 @@
 <div class="activitywrap purpose learnbydoing flash" id="dpch12_lbd07">
 <div class="activityhead">信封和貨幣表示來自TCP / IP套件的協議，在整個不同層中使用。</div>
 <div class="activityhead"></div>
-<h1 class="activityhead">HW2</h1>
+<h1>HW2</h1>
 <h2>變數 Variables</h2>
 <p><a href="https://books.trinket.io/pfe/02-variables.html">https://books.trinket.io/pfe/02-variables.html</a> </p>
 <p>練習 : <a href="https://www.kaggle.com/chanzhirru/variables/edit">https://www.kaggle.com/chanzhirru/variables/edit</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<br/><br/>Variables, expressions, and statements,Values and types
+<p><br/>變量，表達式和語句，值和類型</p>
+<p>A<span> </span><em>value</em><span> </span>is one of the basic things a program works with, like a letter or a number. The values we have seen so far are<span> </span><code>1</code>,<span> </span><code>2</code>, and "Hello, World!"</p>
+<p>值是程序使用的基本內容之一，例如字母或數字。到目前為止，我們看到的值為1、2和“ Hello，World！”。</p>
+<p>These values belong to different<span> </span><em>types</em>:<span> </span><code>2</code><span> </span>is an integer, and "Hello, World!" is a<span> </span><em>string</em>, so called because it contains a "string" of letters. You (and the interpreter) can identify strings because they are enclosed in quotation marks.</p>
+<p>這些值屬於不同的類型：2是整數，“ Hello，World！”是字符串，之所以稱為字符串是因為它包含字母的“字符串”。您（和解釋器）可以識別字符串，因為它們用引號引起來。</p>
+<p>The<span> </span><code>print</code><span> </span>statement also works for integers. We use the<span> </span><code>python</code><span> </span>command to start the interpreter.</p>
+<p>print語句也適用於整數。我們使用python命令啟動解釋器。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">python
+&gt;&gt;&gt; print(4)</pre>
+<p><span>If you are not sure what type a value has, the interpreter can tell you.</span></p>
+<p><span>如果您不確定值的類型，解釋器可以告訴您。</span></p>
+<p><span>Not surprisingly, strings belong to the type <code>str</code><span><span> </span>and integers belong to the type<span> </span></span><code>int</code><span>. Less obviously, numbers with a decimal point belong to a type called<span> </span></span><code>float</code><span>, because these numbers are represented in a format called<span> </span></span><em>floating point</em></span></p>
+<p><span><em>毫不奇怪，字符串屬於str類型，而整數屬於int類型。不太明顯的是，帶小數點的數字屬於稱為浮點的類型，因為這些數字以稱為浮點的格式表示</em></span></p>
+<p>What about values like "17" and "3.2"? They look like numbers, but they are in quotation marks like strings.</p>
+<p>那麼“ 17”和“ 3.2”之類的值呢？它們看起來像數字，但用引號引起來，例如字符串。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; type('17')
+&gt;&gt;&gt; type('3.2')</pre>
+<p>They're strings.</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">他們是字符串。</span></pre>
+<p>When you type a large integer, you might be tempted to use commas between groups of three digits, as in<span> </span><code>1,000,000</code>. This is not a legal integer in Python, but it is legal:</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">當您輸入一個大整數時，您可能會想在三位數的組之間使用逗號，例如1,000,000。在Python中這不是合法的整數，但它是合法的：<br/></span></pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print(1,000,000)</pre>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span>Well, that's not what we expected at all! Python interprets </span><code>1,000,000</code><span><span> </span>as a comma-separated sequence of integers, which it prints with spaces between.</span><br/>好吧，這根本不是我們所期望的！ Python將1,000,000解釋為以逗號分隔的整數序列，並在其之間打印出空格。<br/></span></pre>
+<p>This is the first example we have seen of a semantic error: the code runs without producing an error message, but it doesn't do the "right" thing.</p>
+<p>這是我們看到的第一個語義錯誤示例：代碼運行時未產生錯誤消息，但沒有做“正確的”事情。</p>
+<p>Variables 變數</p>
+<p><span>One of the most powerful features of a programming language is the ability to manipulate </span><em>variables</em><span>. A variable is a name that refers to a value.</span></p>
+<p><span>編程語言最強大的功能之一就是能夠操縱變量。變量是引用值的名稱。</span></p>
+<p><span>An <em>assignment statement</em><span><span> </span>creates new variables and gives them values:</span></span></p>
+<p><span><span>賦值語句創建新變量並為其提供值：</span></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; message = 'And now for something completely different'
+&gt;&gt;&gt; n = 17
+&gt;&gt;&gt; pi = 3.1415926535897931</pre>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span>This example makes three assignments. The first assigns a string to a new variable named </span><code>message</code><span>; the second assigns the integer<span> </span></span><code>17</code><span><span> </span>to<span> </span></span><code>n</code><span>; the third assigns the (approximate) value of<span> </span></span><span class="math"><em>π</em></span><span><span> </span>to<span> </span></span><code>pi</code><span>.</span><br/>本示例進行了三個分配。第一個將字符串分配給一個名為message的新變量；第二個將整數17分配給n；第三個將π的（近似）值分配給pi。<br/><span>To display the value of a variable, you can use a print statement:</span><br/>要顯示變量的值，可以使用打印語句：<br/></span></pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print(n)
+17
+&gt;&gt;&gt; print(pi)
+3.141592653589793</pre>
+<p>The type of a variable is the type of the value it refers to.</p>
+<p>變量的類型是它所引用的值的類型。</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; type(message)
+&lt;class 'str'&gt;
+&gt;&gt;&gt; type(n)
+&lt;class 'int'&gt;
+&gt;&gt;&gt; type(pi)
+&lt;class 'float'&gt;</pre>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW"><br/></span></pre></div></div></div></div></div></div></div></div></div>
