@@ -896,6 +896,293 @@ IndentationError: unexpected indent</pre>
 <dt>short circuit</dt>
 <dd>當Python在評估邏輯表達式的過程中停止運行時，由於Python知道了表達式的最終值而無需評估其餘表達式，因此停止了評估。</dd>
 </dl>
+<h2>Iteration Updating variables 迭代 更新變量</h2>
+<p>A common pattern in assignment statements is an assignment statement that updates a variable, where the new value of the variable depends on the old.</p>
+<p>賦值語句中的常見模式是更新變量的賦值語句，其中變量的新值取決於舊值。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">x = x + 1</pre>
+<p>This means "get the current value of<span> </span><code>x</code>, add 1, and then update<span> </span><code>x</code><span> </span>with the new value."</p>
+<p>這意味著“獲取x的當前值，加1，然後用新值更新x”。</p>
+<p>If you try to update a variable that doesn't exist, you get an error, because Python evaluates the right side before it assigns a value to<span> </span><code>x</code>:</p>
+<p>如果您嘗試更新不存在的變量，則會收到錯誤消息，因為Python在向x賦值之前先評估右邊：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; x = x + 1
+</pre>
+<p>Before you can update a variable, you have to initialize it, usually with a simple assignment:</p>
+<p>在更新變量之前，必須先對其進行初始化，通常使用簡單的賦值即可：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; x = 0
+&gt;&gt;&gt; x = x + 1</pre>
+<p>Updating a variable by adding 1 is called an<span> </span><em>increment</em>; subtracting 1 is called a<span> </span><em>decrement</em>.</p>
+<p>通過加1來更新變量稱為增量；減1稱為減量。</p>
+<h3>The while statement while語句</h3>
+<p>Computers are often used to automate repetitive tasks. Repeating identical or similar tasks without making errors is something that computers do well and people do poorly. Because iteration is so common, Python provides several language features to make it easier.</p>
+<p>計算機通常用於自動化重複性任務。重複相同或相似的任務而不會出錯，這是計算機做得很好而人們做得不好的事情。因為迭代是如此普遍，所以Python提供了多種語言功能來簡化它。</p>
+<p>One form of iteration in Python is the<span> </span><code>while</code><span> </span>statement. Here is a simple program that counts down from five and then says "Blastoff!".</p>
+<p>Python的一種迭代形式是while語句。這是一個簡單的程序，從5開始倒數，然後說“ Blastoff！”。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">n = 5
+while n &gt; 0:
+    print(n)
+    n = n - 1
+print('Blastoff!')</pre>
+<p>You can almost read the<span> </span><code>while</code><span> </span>statement as if it were English. It means, "While<span> </span><code>n</code><span> </span>is greater than 0, display the value of<span> </span><code>n</code><span> </span>and then reduce the value of<span> </span><code>n</code><span> </span>by 1. When you get to 0, exit the<span> </span><code>while</code><span> </span>statement and display the word<span> </span><code>Blastoff!</code>"</p>
+<p>您幾乎可以閱讀while語句，就好像它是英語一樣。這意味著，“當n大於0時，顯示n的值，然後將n的值減小1。當您達到0時，退出while語句並顯示單詞Blastoff！”</p>
+<p>More formally, here is the flow of execution for a<span> </span><code>while</code><span> </span>statement:</p>
+<p>更正式地說，這是while語句的執行流程：</p>
+<ol>
+<li>
+<p>Evaluate the condition, yielding<span> </span><code>True</code><span> </span>or<span> </span><code>False.</code></p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">計算條件，得出True或False。</span></pre>
+</li>
+<li>
+<p>If the condition is false, exit the<span> </span><code>while</code><span> </span>statement and continue execution at the next statement.</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">如果條件為假，則退出while語句並在下一條語句處繼續執行。</span></pre>
+</li>
+</ol>
+<p style="display: inline !important;">If the condition is true, execute the body and then go back to step 1.</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">如果條件為真，則執行主體，然後返回到步驟1。</span></pre>
+<p>This type of flow is called a <em>loop</em> because the third step loops back around to the top. We call each time we execute the body of the loop an <em>iteration</em>. For the above loop, we would say, "It had five iterations", which means that the body of the loop was executed five times.</p>
+<p>這種類型的流程稱為循環，因為第三步循環回到頂部。每次執行循環主體時，我們都會調用一次迭代。對於上面的循環，我們會說“它有五次迭代”，這意味著循環的主體執行了五次。</p>
+<p>The body of the loop should change the value of one or more variables so that eventually the condition becomes false and the loop terminates. We call the variable that changes each time the loop executes and controls when the loop finishes the<span> </span><em>iteration variable</em>. If there is no iteration variable, the loop will repeat forever, resulting in an<span> </span><em>infinite loop</em>.</p>
+<p>循環的主體應更改一個或多個變量的值，以便最終條件變為假並終止循環。我們調用每次循環執行時都會更改的變量，並控制循環何時完成迭代變量。如果沒有迭代變量，則循環將永遠重複，從而導致無限循環。</p>
+<h3>Infinite loops 無限循環</h3>
+<p>An endless source of amusement for programmers is the observation that the directions on shampoo, "Lather, rinse, repeat," are an infinite loop because there is no<span> </span><em>iteration variable</em><span> </span>telling you how many times to execute the loop.</p>
+<p>對於程序員來說，無休止的娛樂來源是觀察到洗髮水上的指示“泡沫，沖洗，重複”是一個無限循環，因為沒有迭代變量告訴您執行循環多少次。對於程序員來說，無休止的娛樂來源是觀察到洗髮水上的指示“泡沫，沖洗，重複”是一個無限循環，因為沒有迭代變量告訴您執行循環多少次。</p>
+<p>In the case of<span> </span><code>countdown</code>, we can prove that the loop terminates because we know that the value of<span> </span><code>n</code><span> </span>is finite, and we can see that the value of<span> </span><code>n</code><span> </span>gets smaller each time through the loop, so eventually we have to get to 0. Other times a loop is obviously infinite because it has no iteration variable at all.</p>
+<p>In the case of<span> </span><code>countdown</code>, we can prove that the loop terminates because we know that the value of<span> </span><code>n</code><span> </span>is finite, and we can see that the value of<span> </span><code>n</code><span> </span>gets smaller each time through the loop, so eventually we have to get to 0. Other times a loop is obviously infinite because it has no iteration variable at all.</p>
+<p>在倒計時的情況下，我們可以證明循環終止，因為我們知道n的值是有限的，並且可以看到每次循環時n的值都會變小，因此最終我們必須達到0。其他時候，循環顯然是無限的，因為它根本沒有迭代變量。在倒計時的情況下，我們可以證明循環終止，因為我們知道n的值是有限的，並且可以看到每次循環時n的值都會變小，因此最終我們必須達到0。其他時候，循環顯然是無限的，因為它根本沒有迭代變量。</p>
+<h3>Infinite loops and break 無限循環與突破</h3>
+<p>Sometimes you don't know it's time to end a loop until you get half way through the body. In that case you can write an infinite loop on purpose and then use the<span> </span><code>break</code><span> </span>statement to jump out of the loop.</p>
+<p>有時，您不知道是時候結束循環了，直到您半途而廢。在這種情況下，您可以故意編寫一個無限循環，然後使用break語句跳出循環。</p>
+<p>This loop is obviously an<span> </span><em>infinite loop</em><span> </span>because the logical expression on the<span> </span><code>while</code><span> </span>statement is simply the logical constant<span> </span><code>True</code>:</p>
+<p>該循環顯然是一個無限循環，因為while語句上的邏輯表達式只是邏輯常量True：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">n = 10
+while True:
+    print(n, end=' ')
+    n = n - 1
+print('Done!')</pre>
+<p>If you make the mistake and run this code, you will learn quickly how to stop a runaway Python process on your system or find where the power-off button is on your computer. This program will run forever or until your battery runs out because the logical expression at the top of the loop is always true by virtue of the fact that the expression is the constant value<span> </span><code>True</code>.</p>
+<p>如果輸入錯誤並運行此代碼，您將快速學習如何停止系統上失控的Python進程或查找計算機上的電源關閉按鈕的位置。該程序將永遠運行，或者直到電池耗盡，因為循環頂部的邏輯表達式始終為true，這是因為表達式為常數值True。</p>
+<p>While this is a dysfunctional infinite loop, we can still use this pattern to build useful loops as long as we carefully add code to the body of the loop to explicitly exit the loop using<span> </span><code>break</code><span> </span>when we have reached the exit condition.</p>
+<p>儘管這是一個功能失常的無限循環，但只要我們小心地將代碼添加到循環主體中，以在達到退出條件時使用break顯式退出循環，我們仍然可以使用此模式來構建有用的循環。</p>
+<p>For example, suppose you want to take input from the user until they type<span> </span><code>done</code>. You could write:</p>
+<p>例如，假設您要在用戶輸入“完成”之前接受用戶的輸入。您可以這樣寫：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">while True:
+    line = input('&gt; ')
+    if line == 'done':
+        break
+    print(line)
+print('Done!')</pre>
+<p>The loop condition is<span> </span><code>True</code>, which is always true, so the loop runs repeatedly until it hits the break statement.</p>
+<p>循環條件為True，始終為true，因此循環重複運行，直到命中break語句為止。</p>
+<p>Each time through, it prompts the user with an angle bracket. If the user types<span> </span><code>done</code>, the<span> </span><code>break</code><span> </span>statement exits the loop. Otherwise the program echoes whatever the user types and goes back to the top of the loop. Here's a sample run:</p>
+<p>每次通過時，都會用尖括號提示用戶。如果用戶鍵入完成，則break語句退出循環。否則，程序將回顯任何用戶鍵入的內容，並返回到循環的頂部。這是一個示例運行：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&gt; hello there
+hello there
+&gt; finished
+finished
+&gt; done
+Done!</pre>
+<p>This way of writing<span> </span><code>while</code><span> </span>loops is common because you can check the condition anywhere in the loop (not just at the top) and you can express the stop condition affirmatively ("stop when this happens") rather than negatively ("keep going until that happens.").</p>
+<p>這種寫while循環的方式很常見，因為您可以在循環中的任何位置（不僅在頂部）檢查條件，而且可以肯定地表示停止條件（“發生這種情況時停止”），而不要否定地表示（繼續進行直到發生。”）。</p>
+<h3>Finishing iterations with continue 用continue完成迭代</h3>
+<p>Sometimes you are in an iteration of a loop and want to finish the current iteration and immediately jump to the next iteration. In that case you can use the<span> </span><code>continue</code><span> </span>statement to skip to the next iteration without finishing the body of the loop for the current iteration.</p>
+<p>有時您處於循環迭代中，想要完成當前迭代並立即跳至下一個迭代。在這種情況下，您可以使用continue語句跳到下一個迭代，而無需完成當前迭代的循環主體。</p>
+<p>Here is an example of a loop that copies its input until the user types "done", but treats lines that start with the hash character as lines not to be printed (kind of like Python comments).</p>
+<p>這是一個循環示例，該示例複製其輸入，直到用戶鍵入“ done”為止，但是將以哈希字符開頭的行視為不打印的行（類似於Python註釋）。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">while True:
+    line = input('&gt; ')
+    if line[0] == '#':
+        continue
+    if line == 'done':
+        break
+    print(line)
+print('Done!')</pre>
+<p>Here is a sample run of this new program with<span> </span><code>continue</code><span> </span>added.</p>
+<p>這是此新程序的示例運行，並添加了continue。</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&gt; hello there
+hello there
+&gt; # don't print this
+&gt; print this!
+print this!
+&gt; done
+Done!</pre>
+<p>All the lines are printed except the one that starts with the hash sign because when the<span> </span><code>continue</code><span> </span>is executed, it ends the current iteration and jumps back to the<span> </span><code>while</code><span> </span>statement to start the next iteration, thus skipping the<span> </span><code>print</code><span> </span>statement.</p>
+<p>除了以井號開頭的行以外，所有行均被打印，因為執行繼續時，它將結束當前迭代並跳回到while語句以開始下一個迭代，從而跳過print語句。</p>
+<h3>Definite loops using for 定環使用for</h3>
+<p>Sometimes we want to loop through a<span> </span><em>set</em><span> </span>of things such as a list of words, the lines in a file, or a list of numbers. When we have a list of things to loop through, we can construct a<span> </span><em>definite</em><span> </span>loop using a<span> </span><code>for</code><span> </span>statement. We call the<span> </span><code>while</code><span> </span>statement an<span> </span><em>indefinite</em><span> </span>loop because it simply loops until some condition becomes<span> </span><code>False</code>, whereas the<span> </span><code>for</code><span> </span>loop is looping through a known set of items so it runs through as many iterations as there are items in the set.</p>
+<p>有時我們想要遍歷一組事物，例如單詞列表，文件中的行或數字列表。當我們有一系列要循環的事情時，我們可以使用for語句構造一個確定的循環。我們將while語句稱為不確定循環，因為它只是循環直到某些條件變為False為止，而for循環正在遍歷一組已知項，因此它要進行的迭代次數與該組中存在項的次數相同。</p>
+<p>The syntax of a<span> </span><code>for</code><span> </span>loop is similar to the<span> </span><code>while</code><span> </span>loop in that there is a<span> </span><code>for</code><span> </span>statement and a loop body:</p>
+<p>for循環的語法與while循環相似，因為其中包含for語句和循環主體：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">friends = ['Joseph', 'Glenn', 'Sally']
+for friend in friends:
+    print('Happy New Year:', friend)
+print('Done!')</pre>
+<p>In Python terms, the variable<span> </span><code>friends</code><span> </span>is a list<a class="footnoteRef" href="https://books.trinket.io/pfe/05-iterations.html#fn1" id="fnref1"><sup>1</sup></a><span> </span>of three strings and the<span> </span><code>for</code><span> </span>loop goes through the list and executes the body once for each of the three strings in the list resulting in this output:</p>
+<p>用Python術語來說，變量friends是一個由三個字符串組成的list1，並且for循環遍歷該列表，並對列表中的三個字符串中的每個字符串執行一次主體，從而得到以下輸出：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">Happy New Year: Joseph
+Happy New Year: Glenn
+Happy New Year: Sally
+Done!</pre>
+<p>Translating this<span> </span><code>for</code><span> </span>loop to English is not as direct as the<span> </span><code>while</code>, but if you think of friends as a<span> </span><em>set</em>, it goes like this: "Run the statements in the body of the for loop once for each friend<span> </span><em>in</em><span> </span>the set named friends."</p>
+<p>將此for循環翻譯成英語並不像一陣子那樣直接，但是如果您將Friends視為一個集合，它會像這樣：“在for循環的主體中，對命名為friends的集合中的每個朋友運行一次語句。 ”</p>
+<p>Looking at the<span> </span><code>for</code><span> </span>loop,<span> </span><em>for</em><span> </span>and<span> </span><em>in</em><span> </span>are reserved Python keywords, and<span> </span><code>friend</code><span> </span>and<span> </span><code>friends</code><span> </span>are variables.</p>
+<p>查看for循環，for和in是保留的Python關鍵字，friend和friends是變量。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for friend in friends:
+    print('Happy New Year:', friend)</pre>
+<p>In particular,<span> </span><code>friend</code><span> </span>is the<span> </span><em>iteration variable</em><span> </span>for the for loop. The variable<span> </span><code>friend</code><span> </span>changes for each iteration of the loop and controls when the<span> </span><code>for</code><span> </span>loop completes. The<span> </span><em>iteration variable</em><span> </span>steps successively through the three strings stored in the<span> </span><code>friends</code><span> </span>variable.</p>
+<p>特別是，friend是for循環的迭代變量。變量friend對於循環的每次迭代都會更改，並控制for循環何時完成。迭代變量依次瀏覽存儲在friends變量中的三個字符串。</p>
+<h3>Loop patterns 循環模式</h3>
+<p>Often we use a<span> </span><code>for</code><span> </span>or<span> </span><code>while</code><span> </span>loop to go through a list of items or the contents of a file and we are looking for something such as the largest or smallest value of the data we scan through.</p>
+<p>通常，我們使用for或while循環遍歷項目列表或文件內容，然後尋找諸如掃描數據的最大值或最小值之類的東西。</p>
+<p>These loops are generally constructed by:</p>
+<p>這些循環通常通過以下方式構造：</p>
+<ul>
+<li>
+<p>Initializing one or more variables before the loop starts</p>
+在循環開始之前初始化一個或多個變量</li>
+<li>
+<p>Performing some computation on each item in the loop body, possibly changing the variables in the body of the loop</p>
+在循環主體中的每個項目上執行一些計算，可能會更改循環主體中的變量</li>
+<li>
+<p>Looking at the resulting variables when the loop completes</p>
+在循環完成時查看結果變量</li>
+</ul>
+<p>We will use a list of numbers to demonstrate the concepts and construction of these loop patterns.</p>
+<p>我們將使用數字列表來演示這些循環模式的概念和構造。</p>
+<p><em><strong>Counting and summing loops 計數和求和循環</strong></em></p>
+<p>For example, to count the number of items in a list, we would write the following<span> </span><code>for</code><span> </span>loop:</p>
+<p>例如，要計算列表中的項目數，我們將編寫以下for循環：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">count = 0
+for itervar in [3, 41, 12, 9, 74, 15]:
+    count = count + 1
+print('Count: ', count)</pre>
+<p>We set the variable<span> </span><code>count</code><span> </span>to zero before the loop starts, then we write a<span> </span><code>for</code><span> </span>loop to run through the list of numbers. Our<span> </span><em>iteration</em><span> </span>variable is named<span> </span><code>itervar</code><span> </span>and while we do not use<span> </span><code>itervar</code><span> </span>in the loop, it does control the loop and cause the loop body to be executed once for each of the values in the list.</p>
+<p>我們在循環開始之前將變量count設置為零，然後編寫for循環以遍歷數字列表。我們的迭代變量名為itervar，雖然我們不在循環中使用itervar，但它確實控制了循環並導致循環主體對列表中的每個值執行一次。</p>
+<p>In the body of the loop, we add 1 to the current value of<span> </span><code>count</code><span> </span>for each of the values in the list. While the loop is executing, the value of<span> </span><code>count</code><span> </span>is the number of values we have seen "so far".</p>
+<p>在循環的主體中，我們為列表中的每個值的當前計數值加1。在執行循環時，count的值就是我們到目前為止所看到的值的數量。</p>
+<p>Once the loop completes, the value of<span> </span><code>count</code><span> </span>is the total number of items. The total number "falls in our lap" at the end of the loop. We construct the loop so that we have what we want when the loop finishes.</p>
+<p>循環完成後，count的值就是項目的總數。循環結束時總數“落在我們的腿上”。我們構造循環，以便在循環結束時擁有所需的內容。</p>
+<p>Another similar loop that computes the total of a set of numbers is as follows:</p>
+<p>計算一組數字總數的另一個類似循環如下：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">total = 0
+for itervar in [3, 41, 12, 9, 74, 15]:
+    total = total + itervar
+print('Total: ', total)</pre>
+<p>In this loop we<span> </span><em>do</em><span> </span>use the<span> </span><em>iteration variable</em>. Instead of simply adding one to the<span> </span><code>count</code><span> </span>as in the previous loop, we add the actual number (3, 41, 12, etc.) to the running total during each loop iteration. If you think about the variable<span> </span><code>total</code>, it contains the "running total of the values so far". So before the loop starts<span> </span><code>total</code><span> </span>is zero because we have not yet seen any values, during the loop<span> </span><code>total</code><span> </span>is the running total, and at the end of the loop<span> </span><code>total</code><span> </span>is the overall total of all the values in the list.</p>
+<p>在此循環中，我們確實使用了迭代變量。我們不像上一個循環那樣簡單地在計數中添加一個數字，而是在每個循環迭代期間將實際數字（3、41、12等）添加到運行總數中。如果考慮變量total，則它包含“到目前為止的值的運行總計”。因此，在循環開始之前，total為零，因為我們尚未看到任何值，在循環期間，total是運行中的總數，而在循環結束時，total是列表中所有值的總和。</p>
+<p>As the loop executes,<span> </span><code>total</code><span> </span>accumulates the sum of the elements; a variable used this way is sometimes called an<span> </span><em>accumulator</em>.</p>
+<p>循環執行時，total累積元素的總和；這種方式使用的變量有時稱為累加器。</p>
+<p>Neither the counting loop nor the summing loop are particularly useful in practice because there are built-in functions<span> </span><code>len()</code><span> </span>and<span> </span><code>sum()</code><span> </span>that compute the number of items in a list and the total of the items in the list respectively.</p>
+<p>計數循環和求和循環在實踐中都不是特別有用，因為內置函數len（）和sum（）分別計算列表中的項目數和列表中項目的總數。</p>
+<p><em><strong>Maximum and minimum loops 最大和最小循環</strong></em></p>
+<p>To find the largest value in a list or sequence, we construct the following loop:</p>
+<p>為了找到列表或序列中的最大值，我們構建以下循環：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">largest = None
+print('Before:', largest)
+for itervar in [3, 41, 12, 9, 74, 15]:
+    if largest is None or itervar &gt; largest :
+        largest = itervar
+    print('Loop:', itervar, largest)
+print('Largest:', largest)</pre>
+<p>When the program executes, the output is as follows:</p>
+<p>程序執行時，輸出如下：</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">Before: None
+Loop: 3 3
+Loop: 41 41
+Loop: 12 41
+Loop: 9 41
+Loop: 74 74
+Loop: 15 74
+Largest: 74</pre>
+<p>The variable<span> </span><code>largest</code><span> </span>is best thought of as the "largest value we have seen so far". Before the loop, we set<span> </span><code>largest</code><span> </span>to the constant<span> </span><code>None</code>.<span> </span><code>None</code><span> </span>is a special constant value which we can store in a variable to mark the variable as "empty".</p>
+<p>最好將可變的最大值視為“迄今為止我們看到的最大值”。在循環之前，我們將最大值設置為常數None。 None是一個特殊的常量值，我們可以將其存儲在變量中以將變量標記為“空”。</p>
+<p>Before the loop starts, the largest value we have seen so far is<span> </span><code>None</code><span> </span>since we have not yet seen any values. While the loop is executing, if<span> </span><code>largest</code><span> </span>is<span> </span><code>None</code><span> </span>then we take the first value we see as the largest so far. You can see in the first iteration when the value of<span> </span><code>itervar</code><span> </span>is 3, since<span> </span><code>largest</code><span> </span>is<span> </span><code>None</code>, we immediately set<span> </span><code>largest</code><span> </span>to be 3.</p>
+<p>在循環開始之前，到目前為止，我們看到的最大值是“無”，因為我們尚未看到任何值。在執行循環時，如果最大值為“無”，那麼我們將採用迄今為止最大的第一個值。您可以在第一次迭代中看到itervar的值為3，因為large是None，我們立即將large設置為3。</p>
+<p>After the first iteration,<span> </span><code>largest</code><span> </span>is no longer<span> </span><code>None</code>, so the second part of the compound logical expression that checks<span> </span><code>itervar &gt; largest</code><span> </span>triggers only when we see a value that is larger than the "largest so far". When we see a new "even larger" value we take that new value for<span> </span><code>largest</code>. You can see in the program output that<span> </span><code>largest</code><span> </span>progresses from 3 to 41 to 74.</p>
+<p>在第一次迭代之後，最大不再是None，因此僅當我們看到一個大於“到目前為止最大”的值時，用於檢查itervar&gt;最大的複合邏輯表達式的第二部分才觸發。當我們看到一個新的“甚至更大”的值時，我們將這個新值取為最大值。您可以在程序輸出中看到最大進度從3到41到74。</p>
+<p>At the end of the loop, we have scanned all of the values and the variable<span> </span><code>largest</code><span> </span>now does contain the largest value in the list.</p>
+<p>在循環結束時，我們已經掃描了所有值，並且變量large現在確實包含列表中的最大值。</p>
+<p>To compute the smallest number, the code is very similar with one small change:</p>
+<p>為了計算最小的數字，代碼非常相似，但有一點點變化：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">smallest = None
+print('Before:', smallest)
+for itervar in [3, 41, 12, 9, 74, 15]:
+    if smallest is None or itervar &lt; smallest:
+        smallest = itervar
+    print('Loop:', itervar, smallest)
+print('Smallest:', smallest)</pre>
+<p>Again,<span> </span><code>smallest</code><span> </span>is the "smallest so far" before, during, and after the loop executes. When the loop has completed,<span> </span><code>smallest</code><span> </span>contains the minimum value in the list.</p>
+<p>同樣，最小是循環執行之前，期間和之後的“迄今為止最大的”。循環完成後，最小值將包含列表中的最小值。</p>
+<p>Again as in counting and summing, the built-in functions<span> </span><code>max()</code><span> </span>and<span> </span><code>min()</code><span> </span>make writing these exact loops unnecessary.</p>
+<p>同樣，在計數和求和中，內置函數max（）和min（）使得無需編寫這些確切的循環。</p>
+<p>以下是Python內置min（）函數的簡單版本：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def min(values):
+    smallest = None
+    for value in values:
+        if smallest is None or value &lt; smallest:
+            smallest = value
+    return smallest</pre>
+<p>In the function version of the smallest code, we removed all of the<span> </span><code>print</code><span> </span>statements so as to be equivalent to the<span> </span><code>min</code><span> </span>function which is already built in to Python.</p>
+<p>在最小代碼的函數版本中，我們刪除了所有print語句，以便等效於Python內置的min函數。</p>
+<h3>Debugging 除錯</h3>
+<p>As you start writing bigger programs, you might find yourself spending more time debugging. More code means more chances to make an error and more places for bugs to hide.</p>
+<p>當您開始編寫更大的程序時，您可能會發現自己花費了更多的時間進行調試。更多的代碼意味著有更多的機會犯錯，並且有更多的地方可以隱藏錯誤。</p>
+<p>One way to cut your debugging time is "debugging by bisection." For example, if there are 100 lines in your program and you check them one at a time, it would take 100 steps.</p>
+<p>減少調試時間的一種方法是“按部分調試”。例如，如果您的程序中有100行，而您一次只檢查一行，則將需要100步。</p>
+<p>Instead, try to break the problem in half. Look at the middle of the program, or near it, for an intermediate value you can check. Add a<span> </span><code>print</code><span> </span>statement (or something else that has a verifiable effect) and run the program.</p>
+<p>相反，請嘗試將問題分解成兩半。查看程序的中間或附近，可以檢查中間值。添加打印語句（或其他可驗證的結果）並運行程序。</p>
+<p>If the mid-point check is incorrect, the problem must be in the first half of the program. If it is correct, the problem is in the second half.</p>
+<p>如果中點檢查不正確，則問題必須出在程序的前半部分。如果正確，則問題出在下半年。</p>
+<p>Every time you perform a check like this, you halve the number of lines you have to search. After six steps (which is much less than 100), you would be down to one or two lines of code, at least in theory.</p>
+<p>每次執行這樣的檢查時，都將要搜索的行數減半。經過六個步驟（遠遠少於100個步驟），至少從理論上講，您將只有一兩行代碼。</p>
+<p>In practice it is not always clear what the "middle of the program" is and not always possible to check it. It doesn't make sense to count lines and find the exact midpoint. Instead, think about places in the program where there might be errors and places where it is easy to put a check. Then choose a spot where you think the chances are about the same that the bug is before or after the check.</p>
+<p>在實踐中，並不總是清楚“程序的中間”是什麼，也不總是可以檢查它。計算行數和找到確切的中點沒有意義。相反，請考慮程序中可能存在錯誤的位置以及易於檢查的位置。然後選擇一個您認為錯誤發生在檢查之前或之後的機會相同的位置。</p>
+<h3>Glossary 詞彙表</h3>
+<dl>
+<dt>accumulator</dt>
+<dd>A variable used in a loop to add up or accumulate a result.</dd>
+<dd><span>循環中用於累加或累加結果的變量。</span></dd>
+</dl>
+<dl>
+<dt>counter</dt>
+<dd>A variable used in a loop to count the number of times something happened. We initialize a counter to zero and then increment the counter each time we want to "count" something.</dd>
+<dd>循環中使用的變量，用於計算發生某事的次數。我們將計數器初始化為零，然後在每次我們要“計數”某事物時遞增該計數器。</dd>
+</dl>
+<dl>
+<dt>decrement</dt>
+<dd>An update that decreases the value of a variable.</dd>
+<dd>減少變量值的更新。</dd>
+</dl>
+<dl>
+<dt>initialize</dt>
+<dd>
+<p>An assignment that gives an initial value to a variable that will be updated.</p>
+<p>一種賦值給要更新的變量的初始值。</p>
+</dd>
+<dt>increment</dt>
+<dd>An update that increases the value of a variable (often by one).</dd>
+<dd>一個增加變量值（通常為1）的更新。</dd>
+</dl>
+<dl>
+<dt>infinite loop</dt>
+<dd>A loop in which the terminating condition is never satisfied or for which there is no terminating condition.</dd>
+<dd>永不滿足終止條件或不滿足終止條件的循環。</dd>
+</dl>
+<dl>
+<dt>iteration</dt>
+<dd>Repeated execution of a set of statements using either a function that calls itself or a loop.</dd>
+<dd>使用調用自身或循環的函數重複執行一組語句。</dd>
+</dl>
+<h3>Exercises 練習題</h3>
+<p>Exercise 1: Write a program which repeatedly reads numbers until the user enters "done". Once "done" is entered, print out the total, count, and average of the numbers. If the user enters anything other than a number, detect their mistake using<span> </span><code>try</code><span> </span>and<span> </span><code>except</code><span> </span>and print an error message and skip to the next number.</p>
+<p>練習1：編寫一個程序，該程序反复讀取數字，直到用戶輸入“完成”為止。輸入“完成”後，打印出總數，計數和平均值。如果用戶輸入的不是數字，則使用try和except檢測到他們的錯誤，並打印錯誤消息並跳至下一個數字。</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">Enter a number: 4
+Enter a number: 5
+Enter a number: bad data
+Invalid input
+Enter a number: 7
+Enter a number: done
+16 3 5.333333333333333</pre>
+<p>Exercise 2: Write another program that prompts for a list of numbers as above and at the end prints out both the maximum and minimum of the numbers instead of the average.</p>
+<p>練習2：編寫另一個程序，提示輸入上述數字，最後打印出最大和最小數字，而不是平均值。</p>
 </div>
 </div>
 </div>
