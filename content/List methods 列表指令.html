@@ -133,16 +133,31 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術<br /><h1>Overview總覽-2</h1>
-<p><span>In this module, we are going to discuss how the various Ethernet standards developed over time.</span></p>
-<p><span>在本模塊中，我們將討論隨著時間的推移如何開發各種以太網標準。</span></p>
-<p><span> We will also discuss why there is a need for these standards and the effect of these standards on the industry.</span></p>
-<p><span>我們還將討論為什麼需要這些標準以及這些標準對行業的影響。</span></p>
-<p><span> In addition, we are going to cover various types of network media standards. We will cover 10Base-T (802.3i, 1990) as well as 100Base-T and 1000Base-T (1GBASE-T or 1 GigE) Ethernet standards, which are most commonly found in current office networks. </span></p>
-<p><span>另外，我們將涵蓋各種類型的網絡媒體標準。我們將介紹10Base-T（802.3i，1990）以及100Base-T和1000Base-T（1GBASE-T或1 GigE）以太網標準，它們是當前辦公網絡中最常見的標準。</span></p>
-<p><span>We will discover how to plan a basic network connection using 100BaseT. Finally, we will cover differences between Ethernet and TCP/IP.</span></p>
-<p><span>我們將發現如何使用100BaseT規劃基本的網絡連接。最後，我們將介紹以太網和TCP / IP之間的差異。</span></p>
-<br />PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術</div>
+    <div id="tipue_search_content">List slices 列表片段 << <a href='List slices 列表片段.html'>Previous</a> <a href='Deleting elements 刪除元素.html'>Next</a> >> Deleting elements 刪除元素<br /><h1>List methods 列表指令</h1>
+<p>Python provides methods that operate on lists. For example,<span> </span><code>append</code><span> </span>adds a new element to the end of a list:</p>
+<p>Python提供了對列表進行操作的方法。例如，append將一個新元素添加到列表的末尾：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['a', 'b', 'c']
+&gt;&gt;&gt; t.append('d')
+&gt;&gt;&gt; print(t)
+['a', 'b', 'c', 'd']</pre>
+<p><code>extend</code><span> </span>takes a list as an argument and appends all of the elements:</p>
+<p>擴展將列表作為參數並附加所有元素：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t1 = ['a', 'b', 'c']
+&gt;&gt;&gt; t2 = ['d', 'e']
+&gt;&gt;&gt; t1.extend(t2)
+&gt;&gt;&gt; print(t1)
+['a', 'b', 'c', 'd', 'e']</pre>
+<p>This example leaves<span> </span><code>t2</code><span> </span>unmodified.</p>
+<p>此示例使t2保持不變。</p>
+<p><code>sort</code><span> </span>arranges the elements of the list from low to high:</p>
+<p>sort將列表的元素從低到高排列：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['d', 'c', 'e', 'b', 'a']
+&gt;&gt;&gt; t.sort()
+&gt;&gt;&gt; print(t)
+['a', 'b', 'c', 'd', 'e']</pre>
+<p>Most list methods are void; they modify the list and return<span> </span><code>None</code>. If you accidentally write<span> </span><code>t = t.sort()</code>, you will be disappointed with the result.</p>
+<p>大多數列表方法都是無效的。他們修改列表並返回None。如果您不小心寫了t = t.sort（），那麼您會對結果感到失望。</p>
+<br />List slices 列表片段 << <a href='List slices 列表片段.html'>Previous</a> <a href='Deleting elements 刪除元素.html'>Next</a> >> Deleting elements 刪除元素</div>
         
     <!-- footer -->
       <div class="container">

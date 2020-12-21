@@ -133,16 +133,33 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術<br /><h1>Overview總覽-2</h1>
-<p><span>In this module, we are going to discuss how the various Ethernet standards developed over time.</span></p>
-<p><span>在本模塊中，我們將討論隨著時間的推移如何開發各種以太網標準。</span></p>
-<p><span> We will also discuss why there is a need for these standards and the effect of these standards on the industry.</span></p>
-<p><span>我們還將討論為什麼需要這些標準以及這些標準對行業的影響。</span></p>
-<p><span> In addition, we are going to cover various types of network media standards. We will cover 10Base-T (802.3i, 1990) as well as 100Base-T and 1000Base-T (1GBASE-T or 1 GigE) Ethernet standards, which are most commonly found in current office networks. </span></p>
-<p><span>另外，我們將涵蓋各種類型的網絡媒體標準。我們將介紹10Base-T（802.3i，1990）以及100Base-T和1000Base-T（1GBASE-T或1 GigE）以太網標準，它們是當前辦公網絡中最常見的標準。</span></p>
-<p><span>We will discover how to plan a basic network connection using 100BaseT. Finally, we will cover differences between Ethernet and TCP/IP.</span></p>
-<p><span>我們將發現如何使用100BaseT規劃基本的網絡連接。最後，我們將介紹以太網和TCP / IP之間的差異。</span></p>
-<br />PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術</div>
+    <div id="tipue_search_content">Lists and strings 列表和字符串 << <a href='Lists and strings 列表和字符串.html'>Previous</a> <a href='Objects and values 對象和價值.html'>Next</a> >> Objects and values 對象和價值<br /><h1>Parsing lines 解析行</h1>
+<p>Usually when we are reading a file we want to do something to the lines other than just printing the whole line. Often we want to find the "interesting lines" and then<span> </span><em>parse</em><span> </span>the line to find some interesting<span> </span><em>part</em><span> </span>of the line. What if we wanted to print out the day of the week from those lines that start with "From "?</p>
+<p>通常，當我們讀取文件時，除了對整個行進行打印外，我們還希望對行進行一些處理。通常，我們希望找到“有趣的行”，然後解析該行以找到該行中一些有趣的部分。如果我們想從以“發件人”開頭的行中打印出星期幾該怎麼辦？</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">From stephen.marquard@uct.ac.zaSatJan 5 09:14:16 2008
+
+</pre>
+<p>The<span> </span><code>split</code><span> </span>method is very effective when faced with this kind of problem. We can write a small program that looks for lines where the line starts with "From ",<span> </span><code>split</code><span> </span>those lines, and then print out the third word in the line:</p>
+<p>面對這種問題，拆分方法非常有效。我們可以編寫一個小程序來查找以“ From”開頭的行，拆分這些行，然後打印出該行中的第三個單詞：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">fhand = open('mbox-short.txt')
+for line in fhand:
+    line = line.rstrip()
+    if not line.startswith('From '): continue
+    words = line.split()
+    print(words[2])</pre>
+<p></p>
+<p>Here we also use the contracted form of the<span> </span><code>if</code><span> </span>statement where we put the<span> </span><code>continue</code><span> </span>on the same line as the<span> </span><code>if</code>. This contracted form of the<span> </span><code>if</code><span> </span>functions the same as if the<span> </span><code>continue</code><span> </span>were on the next line and indented.</p>
+<p>在這裡，我們還使用if語句的協定形式，在其中將continue和if放在同一行。 if的這種收縮形式與繼續在下一行並縮進的功能相同。</p>
+<p>The program produces the following output:</p>
+<p>該程序產生以下輸出：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">Sat
+Fri
+Fri
+Fri
+    ...</pre>
+<p>Later, we will learn increasingly sophisticated techniques for picking the lines to work on and how we pull those lines apart to find the exact bit of information we are looking for.</p>
+<p>稍後，我們將學習越來越複雜的技術，以選擇要使用的線路以及如何將這些線路分開以找到所需的確切信息。</p>
+<br />Lists and strings 列表和字符串 << <a href='Lists and strings 列表和字符串.html'>Previous</a> <a href='Objects and values 對象和價值.html'>Next</a> >> Objects and values 對象和價值</div>
         
     <!-- footer -->
       <div class="container">

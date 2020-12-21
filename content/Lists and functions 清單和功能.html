@@ -133,16 +133,53 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術<br /><h1>Overview總覽-2</h1>
-<p><span>In this module, we are going to discuss how the various Ethernet standards developed over time.</span></p>
-<p><span>在本模塊中，我們將討論隨著時間的推移如何開發各種以太網標準。</span></p>
-<p><span> We will also discuss why there is a need for these standards and the effect of these standards on the industry.</span></p>
-<p><span>我們還將討論為什麼需要這些標準以及這些標準對行業的影響。</span></p>
-<p><span> In addition, we are going to cover various types of network media standards. We will cover 10Base-T (802.3i, 1990) as well as 100Base-T and 1000Base-T (1GBASE-T or 1 GigE) Ethernet standards, which are most commonly found in current office networks. </span></p>
-<p><span>另外，我們將涵蓋各種類型的網絡媒體標準。我們將介紹10Base-T（802.3i，1990）以及100Base-T和1000Base-T（1GBASE-T或1 GigE）以太網標準，它們是當前辦公網絡中最常見的標準。</span></p>
-<p><span>We will discover how to plan a basic network connection using 100BaseT. Finally, we will cover differences between Ethernet and TCP/IP.</span></p>
-<p><span>我們將發現如何使用100BaseT規劃基本的網絡連接。最後，我們將介紹以太網和TCP / IP之間的差異。</span></p>
-<br />PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術</div>
+    <div id="tipue_search_content">Deleting elements 刪除元素 << <a href='Deleting elements 刪除元素.html'>Previous</a> <a href='Lists and strings 列表和字符串.html'>Next</a> >> Lists and strings 列表和字符串<br /><h1>Lists and functions 清單和功能</h1>
+<p>There are a number of built-in functions that can be used on lists that allow you to quickly look through a list without writing your own loops:</p>
+<p>列表中可以使用許多內置函數，這些函數使您可以快速瀏覽列表而無需編寫自己的循環：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; nums = [3, 41, 12, 9, 74, 15]
+&gt;&gt;&gt; print(len(nums))
+6
+&gt;&gt;&gt; print(max(nums))
+74
+&gt;&gt;&gt; print(min(nums))
+3
+&gt;&gt;&gt; print(sum(nums))
+154
+&gt;&gt;&gt; print(sum(nums)/len(nums))
+25.666666666666668</pre>
+<p>The<span> </span><code>sum()</code><span> </span>function only works when the list elements are numbers. The other functions (<code>max()</code>,<span> </span><code>len()</code>, etc.) work with lists of strings and other types that can be comparable.</p>
+<p>sum（）函數僅在列表元素為數字時才有效。其他函數（max（），len（）等）可用於字符串列表和其他可比較的類型。</p>
+<p>We could rewrite an earlier program that computed the average of a list of numbers entered by the user using a list.</p>
+<p>我們可以重寫一個較早的程序，該程序計算用戶使用列表輸入的數字列表的平均值。</p>
+<p>First, the program to compute an average without a list:</p>
+<p>首先，該程序無需列表即可計算平均值：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">total = 0
+count = 0
+while (True):
+    inp = input('Enter a number: ')
+    if inp == 'done': break
+    value = float(inp)
+    total = total + value
+    count = count + 1
+
+average = total / count
+print('Average:', average)</pre>
+<p>In this program, we have<span> </span><code>count</code><span> </span>and<span> </span><code>total</code><span> </span>variables to keep the number and running total of the user's numbers as we repeatedly prompt the user for a number.</p>
+<p>在此程序中，當我們反复提示用戶輸入數字時，我們保留了count和total變量來保持數字和用戶數字的總和。</p>
+<p>We could simply remember each number as the user entered it and use built-in functions to compute the sum and count at the end.</p>
+<p>當用戶輸入數字時，我們可以簡單地記住每個數字，並使用內置函數計算最後的總和和計數。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">numlist = list()
+while (True):
+    inp = input('Enter a number: ')
+    if inp == 'done': break
+    value = float(inp)
+    numlist.append(value)
+
+average = sum(numlist) / len(numlist)
+print('Average:', average)</pre>
+<p>We make an empty list before the loop starts, and then each time we have a number, we append it to the list. At the end of the program, we simply compute the sum of the numbers in the list and divide it by the count of the numbers in the list to come up with the average.</p>
+<p>我們在循環開始前創建一個空列表，然後每次有一個數字時，都會將其附加到列表中。在程序結束時，我們只需計算列表中數字的總和，然後將其除以列表中數字的計數即可得出平均值。</p>
+<br />Deleting elements 刪除元素 << <a href='Deleting elements 刪除元素.html'>Previous</a> <a href='Lists and strings 列表和字符串.html'>Next</a> >> Lists and strings 列表和字符串</div>
         
     <!-- footer -->
       <div class="container">

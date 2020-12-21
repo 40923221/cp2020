@@ -133,16 +133,40 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術<br /><h1>Overview總覽-2</h1>
-<p><span>In this module, we are going to discuss how the various Ethernet standards developed over time.</span></p>
-<p><span>在本模塊中，我們將討論隨著時間的推移如何開發各種以太網標準。</span></p>
-<p><span> We will also discuss why there is a need for these standards and the effect of these standards on the industry.</span></p>
-<p><span>我們還將討論為什麼需要這些標準以及這些標準對行業的影響。</span></p>
-<p><span> In addition, we are going to cover various types of network media standards. We will cover 10Base-T (802.3i, 1990) as well as 100Base-T and 1000Base-T (1GBASE-T or 1 GigE) Ethernet standards, which are most commonly found in current office networks. </span></p>
-<p><span>另外，我們將涵蓋各種類型的網絡媒體標準。我們將介紹10Base-T（802.3i，1990）以及100Base-T和1000Base-T（1GBASE-T或1 GigE）以太網標準，它們是當前辦公網絡中最常見的標準。</span></p>
-<p><span>We will discover how to plan a basic network connection using 100BaseT. Finally, we will cover differences between Ethernet and TCP/IP.</span></p>
-<p><span>我們將發現如何使用100BaseT規劃基本的網絡連接。最後，我們將介紹以太網和TCP / IP之間的差異。</span></p>
-<br />PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術</div>
+    <div id="tipue_search_content">Lists and functions 清單和功能 << <a href='Lists and functions 清單和功能.html'>Previous</a> <a href='Parsing lines 解析行.html'>Next</a> >> Parsing lines 解析行<br /><h1>Lists and strings 列表和字符串</h1>
+<p>A string is a sequence of characters and a list is a sequence of values, but a list of characters is not the same as a string. To convert from a string to a list of characters, you can use<span> </span><code>list</code>:</p>
+<p>字符串是字符序列，列表是值序列，但是字符列表與字符串不同。要將字符串轉換為字符列表，可以使用list：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; s = 'spam'
+&gt;&gt;&gt; t = list(s)
+&gt;&gt;&gt; print(t)
+['s', 'p', 'a', 'm']</pre>
+<p>Because<span> </span><code>list</code><span> </span>is the name of a built-in function, you should avoid using it as a variable name. I also avoid the letter<span> </span><code>l</code><span> </span>because it looks too much like the number<span> </span><code>1</code>. So that's why I use<span> </span><code>t</code>.</p>
+<p>由於list是內置函數的名稱，因此應避免將其用作變量名。我也避免使用字母l，因為它看起來太像數字1。這就是為什麼我使用t的原因。</p>
+<p>The<span> </span><code>list</code><span> </span>function breaks a string into individual letters. If you want to break a string into words, you can use the<span> </span><code>split</code><span> </span>method:</p>
+<p>列表功能將字符串分成單個字母。如果要將字符串分解為單詞，可以使用split方法：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; s = 'pining for the fjords'
+&gt;&gt;&gt; t = s.split()
+&gt;&gt;&gt; print(t)
+['pining', 'for', 'the', 'fjords']
+&gt;&gt;&gt; print(t[2])
+the</pre>
+<p>Once you have used<span> </span><code>split</code><span> </span>to break the string into a list of words, you can use the index operator (square bracket) to look at a particular word in the list.</p>
+<p>一旦使用split將字符串分成單詞列表，就可以使用索引運算符（方括號）查看列表中的特定單詞。</p>
+<p>You can call<span> </span><code>split</code><span> </span>with an optional argument called a<span> </span><em>delimiter</em><span> </span>that specifies which characters to use as word boundaries. The following example uses a hyphen as a delimiter:</p>
+<p>您可以使用稱為定界符的可選參數調用split，該定界符指定將哪些字符用作單詞邊界。下面的示例使用連字符作為分隔符：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; s = 'spam-spam-spam'
+&gt;&gt;&gt; delimiter = '-'
+&gt;&gt;&gt; s.split(delimiter)
+['spam', 'spam', 'spam']</pre>
+<p><code>join</code><span> </span>is the inverse of<span> </span><code>split</code>. It takes a list of strings and concatenates the elements.<span> </span><code>join</code><span> </span>is a string method, so you have to invoke it on the delimiter and pass the list as a parameter:</p>
+<p>join是split的逆函數。它接受字符串列表並連接元素。 join是一個字符串方法，因此您必須在定界符上調用它，並將列表作為參數傳遞：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['pining', 'for', 'the', 'fjords']
+&gt;&gt;&gt; delimiter = ' '
+&gt;&gt;&gt; delimiter.join(t)
+'pining for the fjords'</pre>
+<p>In this case the delimiter is a space character, so<span> </span><code>join</code><span> </span>puts a space between words. To concatenate strings without spaces, you can use the empty string, "", as a delimiter.</p>
+<p>在這種情況下，定界符是空格字符，因此join在單詞之間放置一個空格。要連接沒有空格的字符串，可以使用空字符串“”作為定界符。</p>
+<br />Lists and functions 清單和功能 << <a href='Lists and functions 清單和功能.html'>Previous</a> <a href='Parsing lines 解析行.html'>Next</a> >> Parsing lines 解析行</div>
         
     <!-- footer -->
       <div class="container">

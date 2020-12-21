@@ -15,6 +15,15 @@
 <p style="text-align: left;">IPv6轉譯位址有69、53、42(由大至小)port為3128(在校內)</p>
 <p style="text-align: center;"><span>______</span><span>_______</span><span>_______</span><span>________</span>IPv6 setting in chrome<span>_______</span><span>________</span><span>________</span><span>_____</span></p>
 <p style="text-align: left;">step:打開google chrome<span>→圖示<img alt="" height="16" src="/images/螢幕擷取畫面 2020-10-21 173822.png" width="11"/>→選擇setting→開啟Advance→在system有Open your computer's proxy setting並將其開啟</span></p>
+<h2 style="text-align: left;"><span>W2</span></h2>
+<p><span>下載 fall2020 cp.7z 或是 fall2020 V2.7.7z</span></p>
+<p><span>CMD指令:</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">Ctrl + z 退出python
+dir 看目錄
+cd.. 回上一頁
+cd \ 回根目錄
+C: 去C槽</pre>
+<p>登入Github，點擊右上方+，選擇New repository輸入名稱，選擇public、add a READEM file、Add gitignore並選擇python即可完成</p>
 <h1>PCH 11 Networking Media</h1>
 <p><a href="https://oli.cmu.edu/jcourse/workbook/activity/page?context=d87f2ed60a0001dc34b7c631f7c68297"><span>傳送門:</span></a><a href="https://oli.cmu.edu/jcourse/webui/syllabus/module.do?context=d87f2ed50a0001dc1a3f7bbafbe683af">https://oli.cmu.edu/jcourse/webui/syllabus/module.do?context=d87f2ed50a0001dc1a3f7bbafbe683af</a></p>
 <h2>Fiber-Optic Cable光纖電纜</h2>
@@ -1183,6 +1192,323 @@ Enter a number: done
 16 3 5.333333333333333</pre>
 <p>Exercise 2: Write another program that prompts for a list of numbers as above and at the end prints out both the maximum and minimum of the numbers instead of the average.</p>
 <p>練習2：編寫另一個程序，提示輸入上述數字，最後打印出最大和最小數字，而不是平均值。</p>
+<h2>Lists A list is a sequence 每個列表只是個數列</h2>
+<p>Like a string, a<span> </span><em>list</em><span> </span>is a sequence of values. In a string, the values are characters; in a list, they can be any type. The values in list are called<span> </span><em>elements</em><span> </span>or sometimes<span> </span><em>items</em>.</p>
+<p>像字符串一樣，列表是一系列值。在字符串中，值是字符。在列表中，它們可以是任何類型。列表中的值稱為元素或有時稱為項目。</p>
+<p>There are several ways to create a new list; the simplest is to enclose the elements in square brackets (<code>[</code><span> </span>and<span> </span><code>]</code>):</p>
+<p>有幾種創建新列表的方法。最簡單的方法是將元素括在方括號（[and]）中：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">[10, 20, 30, 40]
+['crunchy frog', 'ram bladder', 'lark vomit']</pre>
+<p>The first example is a list of four integers. The second is a list of three strings. The elements of a list don't have to be the same type. The following list contains a string, a float, an integer, and (lo!) another list:</p>
+<p>第一個示例是四個整數的列表。第二個是三個字符串的列表。列表的元素不必是同一類型。以下列表包含一個字符串，一個浮點數，一個整數和另一個列表：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">['spam', 2.0, 5, [10, 20]]</pre>
+<p>A list within another list is<span> </span><em>nested</em>.</p>
+<p>另一個列表中的列表是嵌套的。</p>
+<p>A list that contains no elements is called an empty list; you can create one with empty brackets,<span> </span><code>[]</code>.</p>
+<p>不包含任何元素的列表稱為空列表。您可以使用方括號[]創建一個。</p>
+<p>As you might expect, you can assign list values to variables:</p>
+<p>如您所料，您可以將列表值分配給變量：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; cheeses = ['Cheddar', 'Edam', 'Gouda']
+&gt;&gt;&gt; numbers = [17, 123]
+&gt;&gt;&gt; empty = []
+&gt;&gt;&gt; print(cheeses, numbers, empty)
+['Cheddar', 'Edam', 'Gouda'] [17, 123] []</pre>
+<h3>Lists are mutable 列表也可是變數</h3>
+<p>The syntax for accessing the elements of a list is the same as for accessing the characters of a string: the bracket operator. The expression inside the brackets specifies the index. Remember that the indices start at 0:</p>
+<p>訪問列表元素的語法與訪問字符串字符的語法相同：方括號運算符。方括號內的表達式指定索引。請記住，索引從0開始：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print(cheeses[0])</pre>
+<p>Unlike strings, lists are mutable because you can change the order of items in a list or reassign an item in a list. When the bracket operator appears on the left side of an assignment, it identifies the element of the list that will be assigned.</p>
+<p>與字符串不同，列表是可變的，因為您可以更改列表中項目的順序或重新分配列表中的項目。當方括號運算符出現在分配的左側時，它標識將要分配的列表元素。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; numbers = [17, 123]
+&gt;&gt;&gt; numbers[1] = 5
+&gt;&gt;&gt; print(numbers)
+[17, 5]</pre>
+<p>The one-eth element of<span> </span><code>numbers</code>, which used to be 123, is now 5.</p>
+<p>以前是123的數字的一個十進制元素現在是5。</p>
+<p>You can think of a list as a relationship between indices and elements. This relationship is called a<span> </span><em>mapping</em>; each index "maps to" one of the elements.</p>
+<p>您可以將列表視為索引和元素之間的關係。這種關係稱為映射。每個索引“映射到”元素之一。</p>
+<p>List indices work the same way as string indices:</p>
+<p>列表索引與字符串索引的工作方式相同：</p>
+<ul>
+<li>
+<p>Any integer expression can be used as an index.</p>
+任何整數表達式都可以用作索引。</li>
+<li>
+<p>If you try to read or write an element that does not exist, you get an<span> </span><code>IndexError</code>.</p>
+如果嘗試讀取或寫入不存在的元素，則會得到IndexError。</li>
+</ul>
+<ul>
+<li>If an index has a negative value, it counts backward from the end of the list.</li>
+</ul>
+<p>          如果索引的值為負，則從列表末尾開始倒數。</p>
+<p>The<span> </span><code>in</code><span> </span>operator also works on lists.</p>
+<p>in運算符也適用於列表。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; cheeses = ['Cheddar', 'Edam', 'Gouda']
+&gt;&gt;&gt; 'Edam' in cheeses
+True
+&gt;&gt;&gt; 'Brie' in cheeses
+False</pre>
+<h3>Traversing a list 遍歷列表</h3>
+<p>The most common way to traverse the elements of a list is with a<span> </span><code>for</code><span> </span>loop. The syntax is the same as for strings:</p>
+<p>遍歷列表元素的最常見方法是使用for循環。語法與字符串相同：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for cheese in cheeses:
+    print(cheese)</pre>
+<p>This works well if you only need to read the elements of the list. But if you want to write or update the elements, you need the indices. A common way to do that is to combine the functions<span> </span><code>range</code><span> </span>and<span> </span><code>len</code>:</p>
+<p>如果您只需要閱讀列表中的元素，則此方法效果很好。但是，如果要編寫或更新元素，則需要索引。常用的方法是結合使用range和len函數：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(len(numbers)):
+    numbers[i] = numbers[i] * 2</pre>
+<p>This loop traverses the list and updates each element.<span> </span><code>len</code><span> </span>returns the number of elements in the list.<span> </span><code>range</code><span> </span>returns a list of indices from 0 to<span> </span><span class="math"><em>n</em> − 1</span>, where<span> </span><span class="math"><em>n</em></span><span> </span>is the length of the list. Each time through the loop,<span> </span><code>i</code><span> </span>gets the index of the next element. The assignment statement in the body uses<span> </span><code>i</code><span> </span>to read the old value of the element and to assign the new value.</p>
+<p>該循環遍歷列表並更新每個元素。 len返回列表中的元素數。 range返回一個從0到n-1的索引列表，其中n是列表的長度。每次通過循環，我都會獲取下一個元素的索引。主體中的賦值語句使用i讀取元素的舊值並分配新值。</p>
+<p>A<span> </span><code>for</code><span> </span>loop over an empty list never executes the body:</p>
+<p>空列表上的for循環永遠不會執行主體：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for x in empty:
+    print('This never happens.')</pre>
+<p>Although a list can contain another list, the nested list still counts as a single element. The length of this list is four:</p>
+<p>儘管一個列表可以包含另一個列表，但是嵌套列表仍然算作單個元素。此列表的長度為四：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">['spam', 1, ['Brie', 'Roquefort', 'Pol le Veq'], [1, 2, 3]]
+</pre>
+<h3>List operations 數列操作</h3>
+<p>The<span> </span><code>+</code><span> </span>operator concatenates lists:</p>
+<p>+運算符連接列表：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; a = [1, 2, 3]
+&gt;&gt;&gt; b = [4, 5, 6]
+&gt;&gt;&gt; c = a + b
+&gt;&gt;&gt; print(c)
+[1, 2, 3, 4, 5, 6]</pre>
+<p>Similarly, the operator repeats a list a given number of times:</p>
+<p>類似地，運算符將列表重複給定的次數：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; [0] * 4
+&gt;&gt;&gt; [1, 2, 3] * 3
+[0, 0, 0, 0]
+[1, 2, 3, 1, 2, 3, 1, 2, 3]</pre>
+<p>The first example repeats four times. The second example repeats the list three times.</p>
+<p>第一個示例重複四次。第二個示例將列表重複三次。</p>
+<h3>List slices 列表片段</h3>
+<p>The slice operator also works on lists:</p>
+<p>slice運算符還適用於列表：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['a', 'b', 'c', 'd', 'e', 'f']
+&gt;&gt;&gt; t[1:3]
+['b', 'c']
+&gt;&gt;&gt; t[:4]
+['a', 'b', 'c', 'd']
+&gt;&gt;&gt; t[3:]
+['d', 'e', 'f']</pre>
+<p>If you omit the first index, the slice starts at the beginning. If you omit the second, the slice goes to the end. So if you omit both, the slice is a copy of the whole list.</p>
+<p>如果省略第一個索引，則切片將從開頭開始。如果省略第二個，則切片將結束。因此，如果您同時省略這兩個部分，則該切片將是整個列表的副本。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t[:]
+['a', 'b', 'c', 'd', 'e', 'f']</pre>
+<p>Since lists are mutable, it is often useful to make a copy before performing operations that fold, spindle, or mutilate lists.</p>
+<p>由於列表是可變的，因此在執行折疊，旋轉或破壞列表的操作之前進行複制通常很有用。</p>
+<p>A slice operator on the left side of an assignment can update multiple elements:</p>
+<p>分配左側的slice運算符可以更新多個元素：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['a', 'b', 'c', 'd', 'e', 'f']
+&gt;&gt;&gt; t[1:3] = ['x', 'y']
+&gt;&gt;&gt; print(t)
+['a', 'x', 'y', 'd', 'e', 'f']</pre>
+<h3>List methods 列表指令</h3>
+<p>Python provides methods that operate on lists. For example,<span> </span><code>append</code><span> </span>adds a new element to the end of a list:</p>
+<p>Python提供了對列表進行操作的方法。例如，append將一個新元素添加到列表的末尾：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['a', 'b', 'c']
+&gt;&gt;&gt; t.append('d')
+&gt;&gt;&gt; print(t)
+['a', 'b', 'c', 'd']</pre>
+<p><code>extend</code><span> </span>takes a list as an argument and appends all of the elements:</p>
+<p>擴展將列表作為參數並附加所有元素：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t1 = ['a', 'b', 'c']
+&gt;&gt;&gt; t2 = ['d', 'e']
+&gt;&gt;&gt; t1.extend(t2)
+&gt;&gt;&gt; print(t1)
+['a', 'b', 'c', 'd', 'e']</pre>
+<p>This example leaves<span> </span><code>t2</code><span> </span>unmodified.</p>
+<p>此示例使t2保持不變。</p>
+<p><code>sort</code><span> </span>arranges the elements of the list from low to high:</p>
+<p>sort將列表的元素從低到高排列：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['d', 'c', 'e', 'b', 'a']
+&gt;&gt;&gt; t.sort()
+&gt;&gt;&gt; print(t)
+['a', 'b', 'c', 'd', 'e']</pre>
+<p>Most list methods are void; they modify the list and return<span> </span><code>None</code>. If you accidentally write<span> </span><code>t = t.sort()</code>, you will be disappointed with the result.</p>
+<p>大多數列表方法都是無效的。他們修改列表並返回None。如果您不小心寫了t = t.sort（），那麼您會對結果感到失望。</p>
+<h3>Deleting elements 刪除元素</h3>
+<p>There are several ways to delete elements from a list. If you know the index of the element you want, you can use<span> </span><code>pop</code>:</p>
+<p>有幾種從列表中刪除元素的方法。如果知道所需元素的索引，則可以使用pop：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['a', 'b', 'c']
+&gt;&gt;&gt; x = t.pop(1)
+&gt;&gt;&gt; print(t)
+['a', 'c']
+&gt;&gt;&gt; print(x)</pre>
+<p><code>pop</code><span> </span>modifies the list and returns the element that was removed. If you don't provide an index, it deletes and returns the last element.</p>
+<p>pop修改列表並返回已刪除的元素。如果不提供索引，它將刪除並返回最後一個元素。</p>
+<p>If you don't need the removed value, you can use the<span> </span><code>del</code><span> </span>operator:</p>
+<p>如果不需要刪除的值，則可以使用del運算符：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['a', 'b', 'c']
+&gt;&gt;&gt; del t[1]
+&gt;&gt;&gt; print(t)
+['a', 'c']</pre>
+<p>If you know the element you want to remove (but not the index), you can use<span> </span><code>remove</code>:</p>
+<p>如果知道要刪除的元素（但不知道索引），則可以使用remove：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['a', 'b', 'c']
+&gt;&gt;&gt; t.remove('b')
+&gt;&gt;&gt; print(t)
+['a', 'c']</pre>
+<p>The return value from<span> </span><code>remove</code><span> </span>is<span> </span><code>None</code>.</p>
+<p>remove的返回值為None。</p>
+<p>To remove more than one element, you can use<span> </span><code>del</code><span> </span>with a slice index:</p>
+<p>要刪除多個元素，可以將del與切片索引一起使用：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['a', 'b', 'c', 'd', 'e', 'f']
+&gt;&gt;&gt; del t[1:5]
+&gt;&gt;&gt; print(t)
+['a', 'f']
+</pre>
+<p>As usual, the slice selects all the elements up to, but not including, the second index.</p>
+<p>像往常一樣，切片選擇直到（但不包括）第二索引的所有元素。</p>
+<h3>Lists and functions 清單和功能</h3>
+<p>There are a number of built-in functions that can be used on lists that allow you to quickly look through a list without writing your own loops:</p>
+<p>列表中可以使用許多內置函數，這些函數使您可以快速瀏覽列表而無需編寫自己的循環：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; nums = [3, 41, 12, 9, 74, 15]
+&gt;&gt;&gt; print(len(nums))
+6
+&gt;&gt;&gt; print(max(nums))
+74
+&gt;&gt;&gt; print(min(nums))
+3
+&gt;&gt;&gt; print(sum(nums))
+154
+&gt;&gt;&gt; print(sum(nums)/len(nums))
+25.666666666666668</pre>
+<p>The<span> </span><code>sum()</code><span> </span>function only works when the list elements are numbers. The other functions (<code>max()</code>,<span> </span><code>len()</code>, etc.) work with lists of strings and other types that can be comparable.</p>
+<p>sum（）函數僅在列表元素為數字時才有效。其他函數（max（），len（）等）可用於字符串列表和其他可比較的類型。</p>
+<p>We could rewrite an earlier program that computed the average of a list of numbers entered by the user using a list.</p>
+<p>我們可以重寫一個較早的程序，該程序計算用戶使用列表輸入的數字列表的平均值。</p>
+<p>First, the program to compute an average without a list:</p>
+<p>首先，該程序無需列表即可計算平均值：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">total = 0
+count = 0
+while (True):
+    inp = input('Enter a number: ')
+    if inp == 'done': break
+    value = float(inp)
+    total = total + value
+    count = count + 1
+
+average = total / count
+print('Average:', average)</pre>
+<p>In this program, we have<span> </span><code>count</code><span> </span>and<span> </span><code>total</code><span> </span>variables to keep the number and running total of the user's numbers as we repeatedly prompt the user for a number.</p>
+<p>在此程序中，當我們反复提示用戶輸入數字時，我們保留了count和total變量來保持數字和用戶數字的總和。</p>
+<p>We could simply remember each number as the user entered it and use built-in functions to compute the sum and count at the end.</p>
+<p>當用戶輸入數字時，我們可以簡單地記住每個數字，並使用內置函數計算最後的總和和計數。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">numlist = list()
+while (True):
+    inp = input('Enter a number: ')
+    if inp == 'done': break
+    value = float(inp)
+    numlist.append(value)
+
+average = sum(numlist) / len(numlist)
+print('Average:', average)</pre>
+<p>We make an empty list before the loop starts, and then each time we have a number, we append it to the list. At the end of the program, we simply compute the sum of the numbers in the list and divide it by the count of the numbers in the list to come up with the average.</p>
+<p>我們在循環開始前創建一個空列表，然後每次有一個數字時，都會將其附加到列表中。在程序結束時，我們只需計算列表中數字的總和，然後將其除以列表中數字的計數即可得出平均值。</p>
+<h3>Lists and strings 列表和字符串</h3>
+<p>A string is a sequence of characters and a list is a sequence of values, but a list of characters is not the same as a string. To convert from a string to a list of characters, you can use<span> </span><code>list</code>:</p>
+<p>字符串是字符序列，列表是值序列，但是字符列表與字符串不同。要將字符串轉換為字符列表，可以使用list：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; s = 'spam'
+&gt;&gt;&gt; t = list(s)
+&gt;&gt;&gt; print(t)
+['s', 'p', 'a', 'm']</pre>
+<p>Because<span> </span><code>list</code><span> </span>is the name of a built-in function, you should avoid using it as a variable name. I also avoid the letter<span> </span><code>l</code><span> </span>because it looks too much like the number<span> </span><code>1</code>. So that's why I use<span> </span><code>t</code>.</p>
+<p>由於list是內置函數的名稱，因此應避免將其用作變量名。我也避免使用字母l，因為它看起來太像數字1。這就是為什麼我使用t的原因。</p>
+<p>The<span> </span><code>list</code><span> </span>function breaks a string into individual letters. If you want to break a string into words, you can use the<span> </span><code>split</code><span> </span>method:</p>
+<p>列表功能將字符串分成單個字母。如果要將字符串分解為單詞，可以使用split方法：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; s = 'pining for the fjords'
+&gt;&gt;&gt; t = s.split()
+&gt;&gt;&gt; print(t)
+['pining', 'for', 'the', 'fjords']
+&gt;&gt;&gt; print(t[2])
+the</pre>
+<p>Once you have used<span> </span><code>split</code><span> </span>to break the string into a list of words, you can use the index operator (square bracket) to look at a particular word in the list.</p>
+<p>一旦使用split將字符串分成單詞列表，就可以使用索引運算符（方括號）查看列表中的特定單詞。</p>
+<p>You can call<span> </span><code>split</code><span> </span>with an optional argument called a<span> </span><em>delimiter</em><span> </span>that specifies which characters to use as word boundaries. The following example uses a hyphen as a delimiter:</p>
+<p>您可以使用稱為定界符的可選參數調用split，該定界符指定將哪些字符用作單詞邊界。下面的示例使用連字符作為分隔符：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; s = 'spam-spam-spam'
+&gt;&gt;&gt; delimiter = '-'
+&gt;&gt;&gt; s.split(delimiter)
+['spam', 'spam', 'spam']</pre>
+<p><code>join</code><span> </span>is the inverse of<span> </span><code>split</code>. It takes a list of strings and concatenates the elements.<span> </span><code>join</code><span> </span>is a string method, so you have to invoke it on the delimiter and pass the list as a parameter:</p>
+<p>join是split的逆函數。它接受字符串列表並連接元素。 join是一個字符串方法，因此您必須在定界符上調用它，並將列表作為參數傳遞：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['pining', 'for', 'the', 'fjords']
+&gt;&gt;&gt; delimiter = ' '
+&gt;&gt;&gt; delimiter.join(t)
+'pining for the fjords'</pre>
+<p>In this case the delimiter is a space character, so<span> </span><code>join</code><span> </span>puts a space between words. To concatenate strings without spaces, you can use the empty string, "", as a delimiter.</p>
+<p>在這種情況下，定界符是空格字符，因此join在單詞之間放置一個空格。要連接沒有空格的字符串，可以使用空字符串“”作為定界符。</p>
+<h3>Parsing lines 解析行</h3>
+<p>Usually when we are reading a file we want to do something to the lines other than just printing the whole line. Often we want to find the "interesting lines" and then<span> </span><em>parse</em><span> </span>the line to find some interesting<span> </span><em>part</em><span> </span>of the line. What if we wanted to print out the day of the week from those lines that start with "From "?</p>
+<p>通常，當我們讀取文件時，除了對整個行進行打印外，我們還希望對行進行一些處理。通常，我們希望找到“有趣的行”，然後解析該行以找到該行中一些有趣的部分。如果我們想從以“發件人”開頭的行中打印出星期幾該怎麼辦？</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">From stephen.marquard@uct.ac.zaSatJan 5 09:14:16 2008
+
+</pre>
+<p>The<span> </span><code>split</code><span> </span>method is very effective when faced with this kind of problem. We can write a small program that looks for lines where the line starts with "From ",<span> </span><code>split</code><span> </span>those lines, and then print out the third word in the line:</p>
+<p>面對這種問題，拆分方法非常有效。我們可以編寫一個小程序來查找以“ From”開頭的行，拆分這些行，然後打印出該行中的第三個單詞：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">fhand = open('mbox-short.txt')
+for line in fhand:
+    line = line.rstrip()
+    if not line.startswith('From '): continue
+    words = line.split()
+    print(words[2])</pre>
+<p></p>
+<p>Here we also use the contracted form of the<span> </span><code>if</code><span> </span>statement where we put the<span> </span><code>continue</code><span> </span>on the same line as the<span> </span><code>if</code>. This contracted form of the<span> </span><code>if</code><span> </span>functions the same as if the<span> </span><code>continue</code><span> </span>were on the next line and indented.</p>
+<p>在這裡，我們還使用if語句的協定形式，在其中將continue和if放在同一行。 if的這種收縮形式與繼續在下一行並縮進的功能相同。</p>
+<p>The program produces the following output:</p>
+<p>該程序產生以下輸出：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">Sat
+Fri
+Fri
+Fri
+    ...</pre>
+<p>Later, we will learn increasingly sophisticated techniques for picking the lines to work on and how we pull those lines apart to find the exact bit of information we are looking for.</p>
+<p>稍後，我們將學習越來越複雜的技術，以選擇要使用的線路以及如何將這些線路分開以找到所需的確切信息。</p>
+<h3>Objects and values 對象和價值</h3>
+<p>If we execute these assignment statements:</p>
+<p>如果執行以下賦值語句：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">a = 'banana'
+b = 'banana'</pre>
+<p>we know that<span> </span><code>a</code><span> </span>and<span> </span><code>b</code><span> </span>both refer to a string, but we don't know whether they refer to the<span> </span><em>same</em><span> </span>string. There are two possible states:</p>
+<p>我們知道a和b都引用一個字符串，但是我們不知道它們是否引用同一個字符串。有兩種可能的狀態：</p>
+<p><img alt="Variables and Objects" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bD0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIxNyAxMiAzMTQgNTciIHdpZHRoPSIzMTRwdCIgaGVpZ2h0PSI1N3B0IiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iPjxtZXRhZGF0YT4gUHJvZHVjZWQgYnkgT21uaUdyYWZmbGUgNi40LjEgPGRjOmRhdGU+MjAxNi0wMS0xNiAxOTowNjo1OSArMDAwMDwvZGM6ZGF0ZT48L21ldGFkYXRhPjxkZWZzPjxmb250LWZhY2UgZm9udC1mYW1pbHk9IkhlbHZldGljYSBOZXVlIiBmb250LXNpemU9IjE2IiBwYW5vc2UtMT0iMiAwIDUgMyAwIDAgMCAyIDAgNCIgdW5pdHMtcGVyLWVtPSIxMDAwIiB1bmRlcmxpbmUtcG9zaXRpb249Ii0xMDAiIHVuZGVybGluZS10aGlja25lc3M9IjUwIiBzbG9wZT0iMCIgeC1oZWlnaHQ9IjUxNyIgY2FwLWhlaWdodD0iNzE0IiBhc2NlbnQ9Ijk1MS45OTU4NSIgZGVzY2VudD0iLTIxMi45OTc0NCIgZm9udC13ZWlnaHQ9IjUwMCI+PGZvbnQtZmFjZS1zcmM+PGZvbnQtZmFjZS1uYW1lIG5hbWU9IkhlbHZldGljYU5ldWUiLz48L2ZvbnQtZmFjZS1zcmM+PC9mb250LWZhY2U+PG1hcmtlciBvcmllbnQ9ImF1dG8iIG92ZXJmbG93PSJ2aXNpYmxlIiBtYXJrZXJVbml0cz0ic3Ryb2tlV2lkdGgiIGlkPSJGaWxsZWRBcnJvd19NYXJrZXIiIHZpZXdCb3g9Ii0xIC0zIDcgNiIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNiIgY29sb3I9ImJsYWNrIj48Zz48cGF0aCBkPSJNIDQuOCAwIEwgMCAtMS44IEwgMCAxLjggWiIgZmlsbD0iY3VycmVudENvbG9yIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9nPjwvbWFya2VyPjwvZGVmcz48ZyBzdHJva2U9Im5vbmUiIHN0cm9rZS1vcGFjaXR5PSIxIiBzdHJva2UtZGFzaGFycmF5PSJub25lIiBmaWxsPSJub25lIiBmaWxsLW9wYWNpdHk9IjEiPjx0aXRsZT5DYW52YXMgMTwvdGl0bGU+PHJlY3QgZmlsbD0id2hpdGUiIHdpZHRoPSI0MDQiIGhlaWdodD0iMjk2Ii8+PGc+PHRpdGxlPkxheWVyIDE8L3RpdGxlPjx0ZXh0IHRyYW5zZm9ybT0idHJhbnNsYXRlKDIyLjU2MjUgMTgpIiBmaWxsPSJibGFjayI+PHRzcGFuIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EgTmV1ZSIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9IjUwMCIgeD0iLjIwNCIgeT0iMTUiIHRleHRMZW5ndGg9IjguNTkyIj5hPC90c3Bhbj48L3RleHQ+PHRleHQgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjIuMDYyNSA0NSkiIGZpbGw9ImJsYWNrIj48dHNwYW4gZm9udC1mYW1pbHk9IkhlbHZldGljYSBOZXVlIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iNTAwIiB4PSIuMjU2IiB5PSIxNSIgdGV4dExlbmd0aD0iOS40ODgiPmI8L3RzcGFuPjwvdGV4dD48dGV4dCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3Ny4wNjI1IDE4KSIgZmlsbD0iYmxhY2siPjx0c3BhbiBmb250LWZhbWlseT0iSGVsdmV0aWNhIE5ldWUiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI1MDAiIHg9Ii4wMjQiIHk9IjE1IiB0ZXh0TGVuZ3RoPSI2MS45NTIiPuKAmGJhbmFuYeKAmTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IHRyYW5zZm9ybT0idHJhbnNsYXRlKDc3LjA2MjUgNDUpIiBmaWxsPSJibGFjayI+PHRzcGFuIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EgTmV1ZSIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9IjUwMCIgeD0iLjAyNCIgeT0iMTUiIHRleHRMZW5ndGg9IjYxLjk1MiI+4oCYYmFuYW5h4oCZPC90c3Bhbj48L3RleHQ+PHBhdGggZD0iTSAzNi41NjI1IDI3IEwgNDIuOTYyNSAyNyBMIDU5LjE2MjUgMjciIG1hcmtlci1lbmQ9InVybCgjRmlsbGVkQXJyb3dfTWFya2VyKSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNIDM3LjA2MjUgNTQgTCA0Mi45NjI1IDU0IEwgNTkuMTYyNSA1NCIgbWFya2VyLWVuZD0idXJsKCNGaWxsZWRBcnJvd19NYXJrZXIpIiBzdHJva2U9ImJsYWNrIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHRyYW5zZm9ybT0idHJhbnNsYXRlKDIwMi41NjI1IDE4KSIgZmlsbD0iYmxhY2siPjx0c3BhbiBmb250LWZhbWlseT0iSGVsdmV0aWNhIE5ldWUiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI1MDAiIHg9Ii4yMDQiIHk9IjE1IiB0ZXh0TGVuZ3RoPSI4LjU5MiI+YTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IHRyYW5zZm9ybT0idHJhbnNsYXRlKDIwMi4wNjI1IDQ1KSIgZmlsbD0iYmxhY2siPjx0c3BhbiBmb250LWZhbWlseT0iSGVsdmV0aWNhIE5ldWUiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI1MDAiIHg9Ii4yNTYiIHk9IjE1IiB0ZXh0TGVuZ3RoPSI5LjQ4OCI+YjwvdHNwYW4+PC90ZXh0Pjx0ZXh0IHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2My4wNjI1IDMyKSIgZmlsbD0iYmxhY2siPjx0c3BhbiBmb250LWZhbWlseT0iSGVsdmV0aWNhIE5ldWUiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI1MDAiIHg9Ii4wMjQiIHk9IjE1IiB0ZXh0TGVuZ3RoPSI2MS45NTIiPuKAmGJhbmFuYeKAmTwvdHNwYW4+PC90ZXh0PjxsaW5lIHgxPSIyMTYuNTYyNSIgeTE9IjI4LjUyODczNiIgeDI9IjI0NS4zMjYzNSIgeTI9IjMzLjE1NzQiIG1hcmtlci1lbmQ9InVybCgjRmlsbGVkQXJyb3dfTWFya2VyKSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjE3LjA2MjUiIHkxPSI1Mi41MDU3NDciIHgyPSIyNDUuMzA0MTUiIHkyPSI0OC4yODU3MyIgbWFya2VyLWVuZD0idXJsKCNGaWxsZWRBcnJvd19NYXJrZXIpIiBzdHJva2U9ImJsYWNrIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48L2c+PC9zdmc+Cg=="/></p>
+<p>In one case,<span> </span><code>a</code><span> </span>and<span> </span><code>b</code><span> </span>refer to two different objects that have the same value. In the second case, they refer to the same object.</p>
+<p>在一種情況下，a和b指的是具有相同值的兩個不同對象。在第二種情況下，它們引用相同的對象。</p>
+<p>To check whether two variables refer to the same object, you can use the<span> </span><code>is</code><span> </span>operator.</p>
+<p>要檢查兩個變量是否引用同一對象，可以使用is運算符。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; a = 'banana'</pre>
+<p>In this example, Python only created one string object, and both<span> </span><code>a</code><span> </span>and<span> </span><code>b</code><span> </span>refer to it.</p>
+<p>在此示例中，Python僅創建了一個字符串對象，並且a和b都引用該對象。</p>
+<p>But when you create two lists, you get two objects:</p>
+<p>但是，當您創建兩個列表時，會得到兩個對象：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; a = [1, 2, 3]
+&gt;&gt;&gt; b = [1, 2, 3]
+&gt;&gt;&gt; a is b
+False</pre>
+<p>In this case we would say that the two lists are<span> </span><em>equivalent</em>, because they have the same elements, but not<span> </span><em>identical</em>, because they are not the same object. If two objects are identical, they are also equivalent, but if they are equivalent, they are not necessarily identical.</p>
+<p>在這種情況下，我們可以說這兩個列表是等效的，因為它們具有相同的元素，但是不相同，因為它們不是相同的對象。如果兩個對象相同，則它們也是等效的，但是如果它們相等，則它們不一定相同。</p>
+<p>Until now, we have been using "object" and "value" interchangeably, but it is more precise to say that an object has a value. If you execute<span> </span><code>a = [1,2,3]</code>,<span> </span><code>a</code><span> </span>refers to a list object whose value is a particular sequence of elements. If another list has the same elements, we would say it has the same value.</p>
+<p>到目前為止，我們一直在交替使用“對象”和“值”，但是更確切地說，對象具有值。如果執行a = [1,2,3]，則a引用列表對象，其值是特定的元素序列。如果另一個列表具有相同的元素，則可以說它具有相同的值。</p>
+<h3>Aliasing 混疊</h3>
+<p>If<span> </span><code>a</code><span> </span>refers to an object and you assign<span> </span><code>b = a</code>, then both variables refer to the same object:</p>
+<p>如果a引用一個對象並且您分配b = a，則兩個變量都引用同一個對象：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; a = [1, 2, 3]
+&gt;&gt;&gt; b = a
+&gt;&gt;&gt; b is a
+True</pre>
+<p>The association of a variable with an object is called a<span> </span><em>reference</em>. In this example, there are two references to the same object.</p>
+<p>變量與對象的關聯稱為引用。在此示例中，有兩個對同一對象的引用。</p>
+<p>An object with more than one reference has more than one name, so we say that the object is<span> </span><em>aliased</em>.</p>
+<p>一個具有多個引用的對象具有多個名稱，因此我們說該對像是別名。</p>
+<p>If the aliased object is mutable, changes made with one alias affect the other:</p>
+<p>如果別名對像是可變的，則使用一個別名進行的更改會影響另一個別名：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; b[0] = 17
+&gt;&gt;&gt; print(a)
+[17, 2, 3]</pre>
+<p></p>
 </div>
 </div>
 </div>

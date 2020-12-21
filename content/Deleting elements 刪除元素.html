@@ -133,16 +133,40 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術<br /><h1>Overview總覽-2</h1>
-<p><span>In this module, we are going to discuss how the various Ethernet standards developed over time.</span></p>
-<p><span>在本模塊中，我們將討論隨著時間的推移如何開發各種以太網標準。</span></p>
-<p><span> We will also discuss why there is a need for these standards and the effect of these standards on the industry.</span></p>
-<p><span>我們還將討論為什麼需要這些標準以及這些標準對行業的影響。</span></p>
-<p><span> In addition, we are going to cover various types of network media standards. We will cover 10Base-T (802.3i, 1990) as well as 100Base-T and 1000Base-T (1GBASE-T or 1 GigE) Ethernet standards, which are most commonly found in current office networks. </span></p>
-<p><span>另外，我們將涵蓋各種類型的網絡媒體標準。我們將介紹10Base-T（802.3i，1990）以及100Base-T和1000Base-T（1GBASE-T或1 GigE）以太網標準，它們是當前辦公網絡中最常見的標準。</span></p>
-<p><span>We will discover how to plan a basic network connection using 100BaseT. Finally, we will cover differences between Ethernet and TCP/IP.</span></p>
-<p><span>我們將發現如何使用100BaseT規劃基本的網絡連接。最後，我們將介紹以太網和TCP / IP之間的差異。</span></p>
-<br />PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術</div>
+    <div id="tipue_search_content">List methods 列表指令 << <a href='List methods 列表指令.html'>Previous</a> <a href='Lists and functions 清單和功能.html'>Next</a> >> Lists and functions 清單和功能<br /><h1>Deleting elements 刪除元素</h1>
+<p>There are several ways to delete elements from a list. If you know the index of the element you want, you can use<span> </span><code>pop</code>:</p>
+<p>有幾種從列表中刪除元素的方法。如果知道所需元素的索引，則可以使用pop：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['a', 'b', 'c']
+&gt;&gt;&gt; x = t.pop(1)
+&gt;&gt;&gt; print(t)
+['a', 'c']
+&gt;&gt;&gt; print(x)</pre>
+<p><code>pop</code><span> </span>modifies the list and returns the element that was removed. If you don't provide an index, it deletes and returns the last element.</p>
+<p>pop修改列表並返回已刪除的元素。如果不提供索引，它將刪除並返回最後一個元素。</p>
+<p>If you don't need the removed value, you can use the<span> </span><code>del</code><span> </span>operator:</p>
+<p>如果不需要刪除的值，則可以使用del運算符：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['a', 'b', 'c']
+&gt;&gt;&gt; del t[1]
+&gt;&gt;&gt; print(t)
+['a', 'c']</pre>
+<p>If you know the element you want to remove (but not the index), you can use<span> </span><code>remove</code>:</p>
+<p>如果知道要刪除的元素（但不知道索引），則可以使用remove：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['a', 'b', 'c']
+&gt;&gt;&gt; t.remove('b')
+&gt;&gt;&gt; print(t)
+['a', 'c']</pre>
+<p>The return value from<span> </span><code>remove</code><span> </span>is<span> </span><code>None</code>.</p>
+<p>remove的返回值為None。</p>
+<p>To remove more than one element, you can use<span> </span><code>del</code><span> </span>with a slice index:</p>
+<p>要刪除多個元素，可以將del與切片索引一起使用：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; t = ['a', 'b', 'c', 'd', 'e', 'f']
+&gt;&gt;&gt; del t[1:5]
+&gt;&gt;&gt; print(t)
+['a', 'f']
+</pre>
+<p>As usual, the slice selects all the elements up to, but not including, the second index.</p>
+<p>像往常一樣，切片選擇直到（但不包括）第二索引的所有元素。</p>
+<br />List methods 列表指令 << <a href='List methods 列表指令.html'>Previous</a> <a href='Lists and functions 清單和功能.html'>Next</a> >> Lists and functions 清單和功能</div>
         
     <!-- footer -->
       <div class="container">

@@ -133,16 +133,42 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術<br /><h1>Overview總覽-2</h1>
-<p><span>In this module, we are going to discuss how the various Ethernet standards developed over time.</span></p>
-<p><span>在本模塊中，我們將討論隨著時間的推移如何開發各種以太網標準。</span></p>
-<p><span> We will also discuss why there is a need for these standards and the effect of these standards on the industry.</span></p>
-<p><span>我們還將討論為什麼需要這些標準以及這些標準對行業的影響。</span></p>
-<p><span> In addition, we are going to cover various types of network media standards. We will cover 10Base-T (802.3i, 1990) as well as 100Base-T and 1000Base-T (1GBASE-T or 1 GigE) Ethernet standards, which are most commonly found in current office networks. </span></p>
-<p><span>另外，我們將涵蓋各種類型的網絡媒體標準。我們將介紹10Base-T（802.3i，1990）以及100Base-T和1000Base-T（1GBASE-T或1 GigE）以太網標準，它們是當前辦公網絡中最常見的標準。</span></p>
-<p><span>We will discover how to plan a basic network connection using 100BaseT. Finally, we will cover differences between Ethernet and TCP/IP.</span></p>
-<p><span>我們將發現如何使用100BaseT規劃基本的網絡連接。最後，我們將介紹以太網和TCP / IP之間的差異。</span></p>
-<br />PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術</div>
+    <div id="tipue_search_content">Lists A list is a sequence 每個列表只是個數列 << <a href='Lists A list is a sequence 每個列表只是個數列.html'>Previous</a> <a href='Traversing a list 遍歷列表.html'>Next</a> >> Traversing a list 遍歷列表<br /><h1>Lists are mutable 列表也可是變數</h1>
+<p>The syntax for accessing the elements of a list is the same as for accessing the characters of a string: the bracket operator. The expression inside the brackets specifies the index. Remember that the indices start at 0:</p>
+<p>訪問列表元素的語法與訪問字符串字符的語法相同：方括號運算符。方括號內的表達式指定索引。請記住，索引從0開始：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print(cheeses[0])</pre>
+<p>Unlike strings, lists are mutable because you can change the order of items in a list or reassign an item in a list. When the bracket operator appears on the left side of an assignment, it identifies the element of the list that will be assigned.</p>
+<p>與字符串不同，列表是可變的，因為您可以更改列表中項目的順序或重新分配列表中的項目。當方括號運算符出現在分配的左側時，它標識將要分配的列表元素。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; numbers = [17, 123]
+&gt;&gt;&gt; numbers[1] = 5
+&gt;&gt;&gt; print(numbers)
+[17, 5]</pre>
+<p>The one-eth element of<span> </span><code>numbers</code>, which used to be 123, is now 5.</p>
+<p>以前是123的數字的一個十進制元素現在是5。</p>
+<p>You can think of a list as a relationship between indices and elements. This relationship is called a<span> </span><em>mapping</em>; each index "maps to" one of the elements.</p>
+<p>您可以將列表視為索引和元素之間的關係。這種關係稱為映射。每個索引“映射到”元素之一。</p>
+<p>List indices work the same way as string indices:</p>
+<p>列表索引與字符串索引的工作方式相同：</p>
+<ul>
+<li>
+<p>Any integer expression can be used as an index.</p>
+任何整數表達式都可以用作索引。</li>
+<li>
+<p>If you try to read or write an element that does not exist, you get an<span> </span><code>IndexError</code>.</p>
+如果嘗試讀取或寫入不存在的元素，則會得到IndexError。</li>
+</ul>
+<ul>
+<li>If an index has a negative value, it counts backward from the end of the list.</li>
+</ul>
+<p>          如果索引的值為負，則從列表末尾開始倒數。</p>
+<p>The<span> </span><code>in</code><span> </span>operator also works on lists.</p>
+<p>in運算符也適用於列表。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; cheeses = ['Cheddar', 'Edam', 'Gouda']
+&gt;&gt;&gt; 'Edam' in cheeses
+True
+&gt;&gt;&gt; 'Brie' in cheeses
+False</pre>
+<br />Lists A list is a sequence 每個列表只是個數列 << <a href='Lists A list is a sequence 每個列表只是個數列.html'>Previous</a> <a href='Traversing a list 遍歷列表.html'>Next</a> >> Traversing a list 遍歷列表</div>
         
     <!-- footer -->
       <div class="container">

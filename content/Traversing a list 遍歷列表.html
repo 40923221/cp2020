@@ -133,16 +133,26 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術<br /><h1>Overview總覽-2</h1>
-<p><span>In this module, we are going to discuss how the various Ethernet standards developed over time.</span></p>
-<p><span>在本模塊中，我們將討論隨著時間的推移如何開發各種以太網標準。</span></p>
-<p><span> We will also discuss why there is a need for these standards and the effect of these standards on the industry.</span></p>
-<p><span>我們還將討論為什麼需要這些標準以及這些標準對行業的影響。</span></p>
-<p><span> In addition, we are going to cover various types of network media standards. We will cover 10Base-T (802.3i, 1990) as well as 100Base-T and 1000Base-T (1GBASE-T or 1 GigE) Ethernet standards, which are most commonly found in current office networks. </span></p>
-<p><span>另外，我們將涵蓋各種類型的網絡媒體標準。我們將介紹10Base-T（802.3i，1990）以及100Base-T和1000Base-T（1GBASE-T或1 GigE）以太網標準，它們是當前辦公網絡中最常見的標準。</span></p>
-<p><span>We will discover how to plan a basic network connection using 100BaseT. Finally, we will cover differences between Ethernet and TCP/IP.</span></p>
-<p><span>我們將發現如何使用100BaseT規劃基本的網絡連接。最後，我們將介紹以太網和TCP / IP之間的差異。</span></p>
-<br />PCH 12 Ethernet Standards << <a href='PCH 12 Ethernet Standards.html'>Previous</a> <a href='Ethernet Technology以太網技術.html'>Next</a> >> Ethernet Technology以太網技術</div>
+    <div id="tipue_search_content">Lists are mutable 列表也可是變數 << <a href='Lists are mutable 列表也可是變數.html'>Previous</a> <a href='List operations 數列操作.html'>Next</a> >> List operations 數列操作<br /><h1>Traversing a list 遍歷列表</h1>
+<p>The most common way to traverse the elements of a list is with a<span> </span><code>for</code><span> </span>loop. The syntax is the same as for strings:</p>
+<p>遍歷列表元素的最常見方法是使用for循環。語法與字符串相同：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for cheese in cheeses:
+    print(cheese)</pre>
+<p>This works well if you only need to read the elements of the list. But if you want to write or update the elements, you need the indices. A common way to do that is to combine the functions<span> </span><code>range</code><span> </span>and<span> </span><code>len</code>:</p>
+<p>如果您只需要閱讀列表中的元素，則此方法效果很好。但是，如果要編寫或更新元素，則需要索引。常用的方法是結合使用range和len函數：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(len(numbers)):
+    numbers[i] = numbers[i] * 2</pre>
+<p>This loop traverses the list and updates each element.<span> </span><code>len</code><span> </span>returns the number of elements in the list.<span> </span><code>range</code><span> </span>returns a list of indices from 0 to<span> </span><span class="math"><em>n</em> − 1</span>, where<span> </span><span class="math"><em>n</em></span><span> </span>is the length of the list. Each time through the loop,<span> </span><code>i</code><span> </span>gets the index of the next element. The assignment statement in the body uses<span> </span><code>i</code><span> </span>to read the old value of the element and to assign the new value.</p>
+<p>該循環遍歷列表並更新每個元素。 len返回列表中的元素數。 range返回一個從0到n-1的索引列表，其中n是列表的長度。每次通過循環，我都會獲取下一個元素的索引。主體中的賦值語句使用i讀取元素的舊值並分配新值。</p>
+<p>A<span> </span><code>for</code><span> </span>loop over an empty list never executes the body:</p>
+<p>空列表上的for循環永遠不會執行主體：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for x in empty:
+    print('This never happens.')</pre>
+<p>Although a list can contain another list, the nested list still counts as a single element. The length of this list is four:</p>
+<p>儘管一個列表可以包含另一個列表，但是嵌套列表仍然算作單個元素。此列表的長度為四：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">['spam', 1, ['Brie', 'Roquefort', 'Pol le Veq'], [1, 2, 3]]
+</pre>
+<br />Lists are mutable 列表也可是變數 << <a href='Lists are mutable 列表也可是變數.html'>Previous</a> <a href='List operations 數列操作.html'>Next</a> >> List operations 數列操作</div>
         
     <!-- footer -->
       <div class="container">
