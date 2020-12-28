@@ -133,37 +133,61 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Categorizing Twisted Pair Cable分類雙絞線電纜-1 << <a href='Categorizing Twisted Pair Cable分類雙絞線電纜-1.html'>Previous</a> <a href='Categorizing Twisted Pair Cable分類雙絞線電纜-2.html'>Next</a> >> Categorizing Twisted Pair Cable分類雙絞線電纜-2<br /><h1>Twisted Pair Connectors雙絞線連接器</h1>
-<p id="N10735" lang="">Twisted pair cables come with three main types of connectors.</p>
-<p lang="">雙絞線電纜帶有三種主要類型的連接器。</p>
-<p lang="">The first is the RJ-45 connector, which is an eight-pin connector used in Ethernet networks.</p>
-<p lang="">第一個是RJ-45連接器，它是以太網網絡中使用的八針連接器。</p>
-<p lang="">Even though most Ethernet networks use only four pins, the RJ-45 provides eight pins for future use and capabilities.</p>
-<p lang="">即使大多數以太網僅使用四個引腳，RJ-45仍提供八個引腳以供將來使用和使用。</p>
-<p lang="">The first four pins are used to transmit (two pins) and receive (two pins).</p>
-<p lang="">前四個引腳用於發送（兩個引腳）和接收（兩個引腳）。</p>
-<p id="N10738" lang="">The RJ-11 connector is used in the standard telephone system.</p>
-<p lang="">RJ-11連接器用於標準電話系統。</p>
-<p lang="">The RJ-11 is a six-pin connector, but commonly only two pins are used for a telephone (transmit and receive).</p>
-<p lang="">RJ-11是一個六針連接器，但電話通常僅使用兩個針（發送和接收）。</p>
-<p lang="">If you have a two-line phone, then four pins are used: two pins to transmit and two pins to receive.</p>
-<p lang="">如果您有兩線電話，則使用四個引腳：兩個引腳用於發送，兩個引腳用於接收。</p>
-<p id="N1073B" lang="">Finally, the DB-9 connector is used for RS-232 signals.</p>
-<p lang="">最後，DB-9連接器用於RS-232信號。</p>
-<p lang="">This connector looks like a standard serial connector. It is used commonly for asynchronous serial communications, like connecting to an external modem.</p>
-<p lang="">該連接器看起來像標準的串行連接器。它通常用於異步串行通信，例如連接到外部調製解調器。</p>
-<p lang="">In modern networks, you will see this type of connector on a “rollover cable.”</p>
-<p lang="">在現代網絡中，您將在“翻轉電纜”上看到這種類型的連接器。</p>
-<p lang="">A rollover cable has a DB-9 on one side (which is connected to your laptop’s serial port), and an RJ-45 connector on the other side (which is used to connect to Cisco routers and switches to do administration tasks).</p>
-<p lang="">翻轉電纜的一側為DB-9（連接到筆記本電腦的串行端口），另一側為RJ-45連接器（用於連接到Cisco路由器和交換機以執行管理任務）。</p>
-<p id="N1073E" lang="">A straight-through cable is a type of twisted pair cable that is used in local area networks to connect a computer to a network hub, such as a router.</p>
-<p lang="">直通電纜是雙絞線電纜的一種，在局域網中用於將計算機連接到網絡集線器（例如路由器）。</p>
-<p lang="">This type of cable is also sometimes called a patch cable.</p>
-<p lang="">此類電纜有時也稱為跳線。</p>
-<p lang="">Both ends of the cable have an identical pinout, hence the name “straight-through.” A crossover cable switches the pinouts of the two ends of the cable, making the transmit and receive pins alternate on the two ends. This allows two workstations to connect directly to each other without the need for a hub, switch, or router.</p>
-<p lang="">電纜的兩端都具有相同的引出線，因此名稱為“直通”。交叉電纜切換電纜兩端的引腳分配，使發送和接收引腳在兩端交替。這允許兩個工作站直接相互連接，而無需集線器，交換機或路由器。</p>
-<p lang=""><img alt="" height="500" src="./../images/image8.png" width="500"/></p>
-<br />Categorizing Twisted Pair Cable分類雙絞線電纜-1 << <a href='Categorizing Twisted Pair Cable分類雙絞線電纜-1.html'>Previous</a> <a href='Categorizing Twisted Pair Cable分類雙絞線電纜-2.html'>Next</a> >> Categorizing Twisted Pair Cable分類雙絞線電纜-2</div>
+    <div id="tipue_search_content">PH25 << <a href='PH25.html'>Previous</a> <br /><h1>PH26</h1>
+<p><strong>Check Tic Tac Toe Exercise 26 檢查井字練習26</strong></p>
+<p>This exercise is Part 2 of 4 of the Tic Tac Toe exercise series. The other exercises are: Part 1, Part 3, and Part 4.<br/>此練習是Tic Tac Toe練習系列4的第2部分。 其他練習是：第1部分，第3部分和第4部分。<br/>As you may have guessed, we are trying to build up to a full tic-tac-toe board. However, this is significantly more than half an hour of coding, so we’re doing it in pieces.<br/>您可能已經猜到了，我們正在努力建立完整的井字遊戲板。 但是，這遠遠超過了半個小時的編碼，因此我們要分批進行。<br/>Today, we will simply focus on checking whether someone has WON a game of Tic Tac Toe, not worrying about how the moves were made.<br/>今天，我們將只關注檢查某人是否贏得了井字遊戲，而不必擔心這些動作是如何進行的。<br/>If a game of Tic Tac Toe is represented as a list of lists, like so:<br/>如果井字遊戲被表示為列表列表，例如：</p>
+<p>game = [[1, 2, 0],<br/> [2, 1, 0],<br/> [2, 1, 1]]</p>
+<p>where a 0 means an empty square, a 1 means that player 1 put their token in that space, and a 2 means that player 2 put their token in that space.<br/>其中0表示空白方塊，(1)表示玩家1將令牌放置在該空間中，而(2)表示玩家2將令牌放置在該空間中。<br/>Your task this week: given a 3 by 3 list of lists that represents a Tic Tac Toe game board, tell me whether anyone has won, and tell me which player won, if any. A Tic Tac Toe win is 3 in a row - either in a row, a column, or a diagonal. Don’t worry about the case where TWO people have won - assume that in every board there will only be one winner.<br/>本週的任務：給一個3排3的列表，代表一個Tic Tac Toe遊戲板，告訴我是否有人贏了，告訴我哪個玩家贏了（如果有）。 井字遊戲的勝利是連續3個-連續，一列或對角線。 不必擔心會有兩個人獲勝的情況-假設在每個董事會中只有一個獲勝者。<br/>Here are some more examples to work with:<br/>以下是一些可以使用的示例：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">winner_is_2 = [[2, 2, 0],
+	[2, 1, 0],
+	[2, 1, 1]]
+
+winner_is_1 = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 1]]
+
+winner_is_also_1 = [[0, 1, 0],
+	[2, 1, 0],
+	[2, 1, 1]]
+
+no_winner = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 2]]
+
+also_no_winner = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 0]]</pre>
+<p>Topics<br/>This exercise is challenging, but doable with only lists (of lists)! Lists of lists are nearly the same as lists, just a bit trickier. Remember that to get the first element in a list called my_list = [5, 10, 15], you index it with a variable like so:</p>
+<p>此練習具有挑戰性，但僅可使用列表中的列表！列表的列表與列表幾乎相同，只是比較棘手。請記住，要獲取名為my_list = [5，10，15]的列表中的第一個元素，請使用如下所示的變量對其進行索引：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print(my_list[0])
+	5
+	&gt;&gt;&gt; print(my_list[-1])
+	15
+	&gt;&gt;&gt; print(len(my_list))
+	3</pre>
+<p>When working with lists of lists, it is the same! Say you have a list matrix = [[1, 2], [3, 4]]. Then, take a look at this:<br/>使用列表列表時，是一樣的！ 假設您有一個列表矩陣= [[1，2]，[3，4]]。 然後，看看這個：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print(matrix[0])
+	[1, 2]
+	&gt;&gt;&gt; print(matrix[-1])
+	[3, 4]
+	&gt;&gt;&gt; first_row = matrix[0]
+	&gt;&gt;&gt; print(first_row[0])
+	1
+	&gt;&gt;&gt; print(matrix[0][0])
+	1
+	&gt;&gt;&gt; print(matrix[1][1])
+	4
+</pre>
+<p>The cool part is that you can use double-indexing to read the elements from our list of lists matrix! By indexing matrix[0][1] we are saying give me the 1st element of the 0th element of matrix, which in this case is 2.<br/>最酷的部分是您可以使用雙索引從列表列表矩陣中讀取元素！ 通過索引矩陣[0] [1]，我們要給我矩陣第0個元素的第一個元素，在這種情況下為2。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><br />PH25 << <a href='PH25.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">

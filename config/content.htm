@@ -1508,7 +1508,66 @@ True</pre>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; b[0] = 17
 &gt;&gt;&gt; print(a)
 [17, 2, 3]</pre>
-<p></p>
+<h1>HW3</h1>
+<h2>PH24</h2>
+<p><strong>Draw A Game Board Exercise 24 畫遊戲板練</strong></p>
+<p>This exercise is Part 1 of 4 of the Tic Tac Toe exercise series. The other exercises are: Part 2, Part 3, and Part 4.<br/>Time for some fake graphics! Let’s say we want to draw game boards that look like this:<br/>此練習是Tic Tac Toe練習系列4的第1部分。 其他練習是：第2部分，第3部分和第4部分。<br/>是時候購買一些假圖形了！ 假設我們要繪製如下游戲板：<br/> --- --- --- <br/>| | | | <br/> --- --- --- <br/>| | | | <br/> --- --- --- <br/>| | | | <br/> --- --- --- <br/>This one is 3x3 (like in tic tac toe). Obviously, they come in many other sizes (8x8 for chess, 19x19 for Go, and many more).<br/>這是3x3（就像井字遊戲一樣）。 顯然，它們有許多其他尺寸（國際象棋為8x8，圍棋為19x19等）。<br/>Ask the user what size game board they want to draw, and draw it for them to the screen using Python’s print statement.<br/>詢問用戶他們想繪製什麼尺寸的遊戲板，並使用Python的print語句將其繪製到屏幕上。<br/>Remember that in Python 3, printing to the screen is accomplished by<br/>請記住，在Python 3中，打印到屏幕是通過以下方式完成的：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"> print("Thing to show on screen")</pre>
+<p>Topics and links for more information 主題和鏈接，以獲取更多信息</p>
+<p>The main topic of this exercise is functions. They are tricky, and deserve lots of practice and thought. Here are a few links in case you want some more reading.<br/>本練習的主要主題是功能。 它們很棘手，值得大量實踐和思考。 這裡有一些鏈接，以備您需要更多閱讀。</p>
+<p>1.Functions on TutorialsPoint (<a href="http://www.tutorialspoint.com/python/python_functions.htm" title="http://www.tutorialspoint.com/python/python_functions.htm">http://www.tutorialspoint.com/python/python_functions.htm</a>)<br/>2.Hands-on Python, by Loyola University (<a href="http://anh.cs.luc.edu/python/handson/3.1/handsonHtml/functions.html">http://anh.cs.luc.edu/python/handson/3.1/handsonHtml/functions.html</a>)<br/>3.Learn Python the Hard Way (<a href="https://learnpythonthehardway.org/book/ex21.html">https://learnpythonthehardway.org/book/ex21.html</a>)<br/>4.ZetCode (<a href="http://zetcode.com/lang/python/functions/">http://zetcode.com/lang/python/functions/</a>)<br/>There are hundreds more out there - read and practice away!<br/>那裡還有數百個-閱讀它和練習吧！</p>
+<h2>PH25</h2>
+<p><strong>Guessing Game Two Exercise 25 猜字遊戲二練習25</strong></p>
+<p>In a previous exercise, we’ve written a program that “knows” a number and asks a user to guess it.<br/>在上一個練習中，我們編寫了一個程序，該程序“知道”一個數字並要求用戶猜測它。<br/>This time, we’re going to do exactly the opposite. You, the user, will have in your head a number between 0 and 100. The program will guess a number, and you, the user, will say whether it is too high, too low, or your number.<br/>這次，我們將做相反的事情。 您（用戶）的腦海中會有一個介於0到100之間的數字。程序將猜測一個數字，而您（用戶）將說出它是太高，太低還是您的數字。</p>
+<p><br/>At the end of this exchange, your program should print out how many guesses it took to get your number.<br/>交換結束後，您的程序應打印出獲得號碼所需的猜測次數。<br/>As the writer of this program, you will have to choose how your program will strategically guess. A naive strategy can be to simply start the guessing at 1, and keep going (2, 3, 4, etc.) until you hit the number. But that’s not an optimal guessing strategy. An alternate strategy might be to guess 50 (right in the middle of the range), and then increase / decrease by 1 as needed. After you’ve written the program, try to find the optimal strategy! (We’ll talk about what is the optimal one next week with the solution.)<br/>作為該程序的作者，您將不得不選擇您的程序將如何進行戰略性猜測。 幼稚的策略可以是簡單地從1開始猜測，然後繼續進行（2、3、4等），直到您得出數字。 但這不是最佳的猜測策略。 另一種策略是猜測50（在範圍的中間），然後根據需要增加/減少1。 編寫完程序後，嘗試找到最佳策略！ （我們將在下週討論該解決方案的最佳選擇。）</p>
+<p><br/>Topics and links for more information 主題和鏈接，以獲取更多信息</p>
+<p>This exercise doesn’t need any functions, but it does need extensive use of variables, math, and user input.<br/>此練習不需要任何功能，但確實需要大量使用變量，數學和用戶輸入。<br/>You can refer to this exercise on user input, this one on rock paper scissors, and many others.(<a href="https://www.practicepython.org/exercise/2014/01/29/01-character-input.html">https://www.practicepython.org/exercise/2014/01/29/01-character-input.html</a>)(<a href="https://www.practicepython.org/exercise/2014/03/26/08-rock-paper-scissors.html">https://www.practicepython.org/exercise/2014/03/26/08-rock-paper-scissors.html</a>)<br/>您可以在用戶輸入上參考此練習，在石頭剪刀上參考此練習，以及其他許多參考。<br/>If you want to implement the optimal solution without thinking about it first, you can read this Wikipedia article on binary search.(<a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">https://en.wikipedia.org/wiki/Binary_search_algorithm</a>)<br/>如果您想在不首先考慮的情況下實施最佳解決方案，則可以閱讀有關二進制搜索的Wikipedia文章。</p>
+<h2>PH26</h2>
+<p><strong>Check Tic Tac Toe Exercise 26 檢查井字練習26</strong></p>
+<p>This exercise is Part 2 of 4 of the Tic Tac Toe exercise series. The other exercises are: Part 1, Part 3, and Part 4.<br/>此練習是Tic Tac Toe練習系列4的第2部分。 其他練習是：第1部分，第3部分和第4部分。<br/>As you may have guessed, we are trying to build up to a full tic-tac-toe board. However, this is significantly more than half an hour of coding, so we’re doing it in pieces.<br/>您可能已經猜到了，我們正在努力建立完整的井字遊戲板。 但是，這遠遠超過了半個小時的編碼，因此我們要分批進行。<br/>Today, we will simply focus on checking whether someone has WON a game of Tic Tac Toe, not worrying about how the moves were made.<br/>今天，我們將只關注檢查某人是否贏得了井字遊戲，而不必擔心這些動作是如何進行的。<br/>If a game of Tic Tac Toe is represented as a list of lists, like so:<br/>如果井字遊戲被表示為列表列表，例如：</p>
+<p>game = [[1, 2, 0],<br/> [2, 1, 0],<br/> [2, 1, 1]]</p>
+<p>where a 0 means an empty square, a 1 means that player 1 put their token in that space, and a 2 means that player 2 put their token in that space.<br/>其中0表示空白方塊，(1)表示玩家1將令牌放置在該空間中，而(2)表示玩家2將令牌放置在該空間中。<br/>Your task this week: given a 3 by 3 list of lists that represents a Tic Tac Toe game board, tell me whether anyone has won, and tell me which player won, if any. A Tic Tac Toe win is 3 in a row - either in a row, a column, or a diagonal. Don’t worry about the case where TWO people have won - assume that in every board there will only be one winner.<br/>本週的任務：給一個3排3的列表，代表一個Tic Tac Toe遊戲板，告訴我是否有人贏了，告訴我哪個玩家贏了（如果有）。 井字遊戲的勝利是連續3個-連續，一列或對角線。 不必擔心會有兩個人獲勝的情況-假設在每個董事會中只有一個獲勝者。<br/>Here are some more examples to work with:<br/>以下是一些可以使用的示例：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">winner_is_2 = [[2, 2, 0],
+	[2, 1, 0],
+	[2, 1, 1]]
+
+winner_is_1 = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 1]]
+
+winner_is_also_1 = [[0, 1, 0],
+	[2, 1, 0],
+	[2, 1, 1]]
+
+no_winner = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 2]]
+
+also_no_winner = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 0]]</pre>
+<p>Topics<br/>This exercise is challenging, but doable with only lists (of lists)! Lists of lists are nearly the same as lists, just a bit trickier. Remember that to get the first element in a list called my_list = [5, 10, 15], you index it with a variable like so:</p>
+<p>此練習具有挑戰性，但僅可使用列表中的列表！列表的列表與列表幾乎相同，只是比較棘手。請記住，要獲取名為my_list = [5，10，15]的列表中的第一個元素，請使用如下所示的變量對其進行索引：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print(my_list[0])
+	5
+	&gt;&gt;&gt; print(my_list[-1])
+	15
+	&gt;&gt;&gt; print(len(my_list))
+	3</pre>
+<p>When working with lists of lists, it is the same! Say you have a list matrix = [[1, 2], [3, 4]]. Then, take a look at this:<br/>使用列表列表時，是一樣的！ 假設您有一個列表矩陣= [[1，2]，[3，4]]。 然後，看看這個：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print(matrix[0])
+	[1, 2]
+	&gt;&gt;&gt; print(matrix[-1])
+	[3, 4]
+	&gt;&gt;&gt; first_row = matrix[0]
+	&gt;&gt;&gt; print(first_row[0])
+	1
+	&gt;&gt;&gt; print(matrix[0][0])
+	1
+	&gt;&gt;&gt; print(matrix[1][1])
+	4
+</pre>
+<p>The cool part is that you can use double-indexing to read the elements from our list of lists matrix! By indexing matrix[0][1] we are saying give me the 1st element of the 0th element of matrix, which in this case is 2.<br/>最酷的部分是您可以使用雙索引從列表列表矩陣中讀取元素！ 通過索引矩陣[0] [1]，我們要給我矩陣第0個元素的第一個元素，在這種情況下為2。</p>
 </div>
 </div>
 </div>
