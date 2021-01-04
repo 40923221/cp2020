@@ -133,48 +133,103 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Ethernet Technology以太網技術 << <a href='Ethernet Technology以太網技術.html'>Previous</a> <a href='Evolution of Standards標準的演變.html'>Next</a> >> Evolution of Standards標準的演變<br /><h1>Carrier Sense Multiple Access&Collision Detect載波偵聽多路訪問和衝突檢測</h1>
-<p id="N10698" lang="">The nature of half-duplex transmission brought about the need for CSMA/CD, which works by allowing all devices to transmit data whenever they wish.</p>
-<p lang="">半雙工傳輸的性質帶來了對CSMA / CD的需求，它允許所有設備在需要時傳輸數據。</p>
-<p lang="">The carrier sense portion means that the device “listens” to the network first to find a “break” in the conversation.</p>
-<p lang="">運營商感知部分意味著設備首先“監聽”網絡以在會話中找到“中斷”。</p>
-<p lang="">If the device doesn’t hear other devices transmitting, then it begins its transmission.</p>
-<p lang="">如果該設備聽不到其他設備的傳輸，則開始傳輸。</p>
-<p lang="">Multiple access refers to every device having equal access to the network at all times.</p>
-<p lang="">多路訪問是指每台設備始終具有對網絡的平等訪問權限。</p>
-<p lang="">This is unlike the token ring network in which each device had to wait for the signal (token) before transmitting.</p>
-<p lang="">這與令牌環網絡不同，在令牌環網絡中，每個設備都必須在發送之前等待信號（令牌）。</p>
-<p lang="">Finally, we have collision detection as part of the CSMA/CD control method.</p>
-<p lang="">最後，我們將碰撞檢測作為CSMA / CD控制方法的一部分。</p>
-<p lang="">If, by chance, two devices both were ready to transmit, they “listened” to the network for a “lull” in the conversation, and both started transmitting at the same time, the devices are able to detect that they both transmitted at the same time and caused a collision.</p>
-<p lang="">如果偶然地兩個設備都準備好發送，則它們在通話中“偵聽”網絡中的“失敗”，並且兩個設備都同時開始發送，則這些設備能夠檢測到它們都在發送時發送。同時又造成了碰撞。</p>
-<p id="N1069B" lang="">The image below depicts both the CSMA/CD and CSMA/CA simplified algorithm.</p>
-<p lang="">下圖描述了CSMA / CD和CSMA / CA簡化算法。</p>
-<p lang="">The left branch is CSMA/CD used by half-duplex Ethernet and the right branch is CSMA/CA used by 802.11 wireless LAN, which is also half-duplex.</p>
-<p lang="">左分支是半雙工以太網使用的CSMA / CD，右分支是802.11無線LAN（也是半雙工）使用的CSMA / CA。</p>
-<p lang=""><img alt="" height="749" src="./../images/image1.png" width="769"/></p>
-<p lang=""><span>In the example shown below, four devices are connected in a physical bus topology. Each device has equal access to the network.</span></p>
-<p lang=""><span>在下面顯示的示例中，四個設備以物理總線拓撲連接。每個設備對網絡都有平等的訪問權限。</span></p>
-<p lang=""><span> Here, all the devices are listening, trying to determine if any other device is communicating before beginning transmission.</span></p>
-<p lang=""><span>在這裡，所有設備都在監聽，試圖確定是否有其他設備在開始傳輸之前進行通信。</span></p>
-<p lang=""><span><img alt="" height="488" src="./../images/image2.png" width="700"/></span></p>
-<p id="N106CA" lang="">In the next image below, we see an example of two devices that transmitted at the same time.</p>
-<p lang="">在下一張圖片中，我們看到了兩個同時傳輸的設備的示例。</p>
-<p lang="">This simultaneous transmission resulted in a data collision, causing the transmission to be broken.</p>
-<p lang="">這種同時傳輸導致數據衝突，導致傳輸中斷。</p>
-<p lang=""><img alt="" height="488" src="./../images/image3.png" width="700"/></p>
-<p id="N106DB" lang="">When a collision is detected, both devices choose a backoff time at random, and then attempt to retransmit again.</p>
-<p lang="">當檢測到衝突時，兩個設備都會隨機選擇一個退避時間，然後嘗試重新傳輸。</p>
-<p lang="">In the diagram below, the computers choose to wait 200 milliseconds and 300 milliseconds, respectively.</p>
-<p lang="">在下圖中，計算機分別選擇等待200毫秒和300毫秒。</p>
-<p lang="">When that time is up, they will attempt to sense if another machine is already transmitting.</p>
-<p lang="">時間到時，他們將嘗試檢測另一台機器是否已經在傳輸。</p>
-<p lang="">If there is nothing detected, the first machine will transmit its message. Once completed, the second machine will then transmit its message, after its 300 millisecond wait time.</p>
-<p lang="">如果未檢測到任何內容，則第一台機器將發送其消息。一旦完成，第二台機器將在其300毫秒的等待時間之後發送其消息。</p>
-<p lang=""><img alt="" height="488" src="./../images/image4.png" width="700"/></p>
-<p lang="">Recovering from a collision with random backup timers.</p>
-<p lang="">使用隨機備份計時器從衝突中恢復。</p>
-<br />Ethernet Technology以太網技術 << <a href='Ethernet Technology以太網技術.html'>Previous</a> <a href='Evolution of Standards標準的演變.html'>Next</a> >> Evolution of Standards標準的演變</div>
+    <div id="tipue_search_content">Files Persistence 檔案開啟 << <a href='Files Persistence 檔案開啟.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3<br /><h1>HTML Tutorial HTML教程</h1>
+<p><strong>HTML Introduction HTML簡介</strong></p>
+<p><span>HTML is the standard markup language for creating Web pages.</span></p>
+<p>HTML是用於創建網頁的標準標記語言。</p>
+<p><strong>What is HTML? 什麼是HTML？</strong></p>
+<ul>
+<li>HTML stands for Hyper Text Markup Language</li>
+<li>HTML代表超文本標記語言</li>
+<li>HTML is the standard markup language for creating Web pages</li>
+<li>HTML是用於創建網頁的標準標記語言</li>
+<li>HTML describes the structure of a Web page</li>
+<li>HTML描述了網頁的結構</li>
+<li>HTML consists of a series of elements</li>
+<li>HTML由一系列元素組成</li>
+<li>HTML elements tell the browser how to display the content</li>
+<li>HTML元素告訴瀏覽器如何顯示內容</li>
+<li>HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.</li>
+<li>HTML元素標記內容的內容，例如“這是標題”，“這是段落”，“這是鏈接”等。</li>
+</ul>
+<p><strong>A Simple HTML Document 一個簡單的HTML文檔</strong></p>
+<p><strong>Example 範例<br/></strong></p>
+<p></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First Heading&lt;/h1&gt;
+&lt;p&gt;My first paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p><strong>Example Explained 示例說明</strong></p>
+<ul>
+<li>The<span> </span><code class="w3-codespan">&lt;!DOCTYPE html&gt;</code><span> </span>declaration defines that this document is an HTML5 document</li>
+<li>&lt;！DOCTYPE html&gt;聲明定義此文檔為HTML5文檔</li>
+<li>The<span> </span><code class="w3-codespan">&lt;html&gt;</code><span> </span>element is the root element of an HTML page</li>
+<li>&lt;html&gt;元素是HTML頁面的根元素</li>
+<li>The<span> </span><code class="w3-codespan">&lt;head&gt;</code><span> </span>element contains meta information about the HTML page</li>
+<li>&lt;head&gt;元素包含有關HTML頁面的元信息</li>
+<li>The<span> </span><code class="w3-codespan">&lt;title&gt;</code><span> </span>element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)</li>
+<li>&lt;title&gt;元素指定HTML頁面的標題（顯示在瀏覽器的標題欄中或頁面的選項卡中）</li>
+<li>The<span> </span><code class="w3-codespan">&lt;body&gt;</code><span> </span>element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.</li>
+<li>&lt;body&gt;元素定義文檔的正文，並且是所有可見內容的容器，例如標題，段落，圖像，超鏈接，表格，列表等。</li>
+<li>The<span> </span><code class="w3-codespan">&lt;h1&gt;</code><span> </span>element defines a large heading</li>
+<li>&lt;h1&gt;元素定義一個大標題</li>
+<li>The<span> </span><code class="w3-codespan">&lt;p&gt;</code><span> </span>element defines a paragraph</li>
+<li>&lt;p&gt;元素定義一個段落</li>
+</ul>
+<p><strong>What is an HTML Element? 什麼是HTML元素？</strong></p>
+<p>An HTML element is defined by a start tag, some content, and an end tag:</p>
+<p>HTML元素由開始標籤，一些內容和結束標籤定義：</p>
+<div><span>&lt;tagname&gt;</span>Content goes here...<span>&lt;/tagname&gt;</span></div>
+<div>
+<p>The HTML<span> </span><strong>element</strong><span> </span>is everything from the start tag to the end tag:</p>
+<p>HTML元素包括從開始標記到結束標記的所有內容：</p>
+<div><span>&lt;h1&gt;</span>My First Heading<span>&lt;/h1&gt;</span></div>
+<div>
+<div><span>&lt;p&gt;</span>My first paragraph.<span>&lt;/p&gt;</span></div>
+<div><span><img alt="" height="150" src="./../images/螢幕擷取畫面 2021-01-03 200637.png" width="1270"/></span></div>
+<div>
+<div class="w3-panel w3-note">
+<p><strong>Note:</strong><span> </span>Some HTML elements have no content (like the &lt;br&gt; element). These elements are called empty elements. Empty elements do not have an end tag!</p>
+<p>注意：某些HTML元素沒有內容（例如&lt;br&gt;元素）。這些元素稱為空元素。空元素沒有結束標籤！</p>
+<p><strong>Web Browsers 網頁瀏覽器</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<p>The purpose of a web browser (Chrome, Edge, Firefox, Safari) is to read HTML documents and display them correctly.</p>
+<p>網絡瀏覽器（Chrome，Edge，Firefox，Safari）的目的是讀取HTML文檔並正確顯示它們。</p>
+<p>A browser does not display the HTML tags, but uses them to determine how to display the document:</p>
+<p>瀏覽器不顯示HTML標記，而是使用它們來確定如何顯示文檔：</p>
+<img alt="View in Browser" class="w3-image" src="https://www.w3schools.com/html/img_chrome.png"/></div>
+<div><strong>HTML Page Structure HTML頁面結構</strong></div>
+<div>
+<p>Below is a visualization of an HTML page structure:</p>
+<p>下面是HTML頁面結構的可視化：</p>
+<p><img alt="" height="517" src="./../images/螢幕擷取畫面 2021-01-03 200945.png" width="1253"/></p>
+<div class="w3-panel w3-note">
+<p><strong>Note:</strong><span> </span>The content inside the &lt;body&gt; section (the white area above) will be displayed in a browser. The content inside the &lt;title&gt; element will be shown in the browser's title bar or in the page's tab.</p>
+<p>注意：&lt;body&gt;部分（上面的白色區域）內的內容將在瀏覽器中顯示。 &lt;title&gt;元素內的內容將顯示在瀏覽器的標題欄中或頁面的選項卡中。</p>
+<p><strong>HTML History HTML歷史</strong></p>
+<p>Since the early days of the World Wide Web, there have been many versions of HTML:</p>
+<p>自萬維網問世以來，已經有許多版本的HTML：</p>
+<p><img alt="" height="540" src="./../images/螢幕擷取畫面 2021-01-03 201133.png" width="568"/></p>
+<div class="w3-panel w3-note">
+<p>This tutorial follows the latest HTML5 standard.</p>
+<p>本教程遵循最新的HTML5標準。</p>
+</div>
+</div>
+</div>
+<br />Files Persistence 檔案開啟 << <a href='Files Persistence 檔案開啟.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3</div>
         
     <!-- footer -->
       <div class="container">
